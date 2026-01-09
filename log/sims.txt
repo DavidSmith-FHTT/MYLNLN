@@ -1,0 +1,1005 @@
+cuda
+Namespace(config_file='configs/train_sims.yaml', seed=1113)
+{'base': {'seed': 1111, 'lr': 0.0001, 'weight_decay': 0.0001, 'batch_size': 64, 'n_epochs': 200, 'num_workers': 8, 'alpha': 0.9, 'beta1': 0.6, 'gamma1': 0.1, 'sigma': 1.0, 'train_mode': 'regression', 'missing_rate_eval_test': 0.5, 'do_validation': True}, 'dataset': {'datasetName': 'sims', 'dataPath': '/data2/cts/MSA-Datasets/CH-SIMS/Processed/unaligned_39.pkl'}, 'model': {'feature_extractor': {'bert_pretrained': '/data2/cts/pretrained_berts/bert-base-chinese', 'input_length': [39, 55, 400], 'token_length': [8, 8, 8], 'heads': 8, 'input_dims': [768, 709, 33], 'hidden_dims': [128, 128, 128], 'depth': 2}, 'dmc': {'proxy_dominant_feature_generator': {'input_length': 24, 'token_length': 8, 'depth': 2, 'heads': 8, 'input_dim': 128, 'hidden_dim': 128}, 'effectiveness_discriminator': {'input_dim': 128, 'hidden_dim': 64, 'out_dim': 2}, 'completeness_check': {'input_length': 8, 'token_length': 1, 'depth': 2, 'heads': 8, 'input_dim': 128, 'hidden_dim': 128}}, 'reconstructor': {'input_length': 8, 'depth': 2, 'heads': 8, 'input_dim': 128, 'hidden_dim': 128}, 'dmml': {'language_encoder': {'input_length': 8, 'token_length': 8, 'depth': 2, 'heads': 8, 'input_dim': 128, 'hidden_dim': 128}, 'hyper_modality_learning': {'depth': 3, 'heads': 8, 'input_dim': 128, 'hidden_dim': 128}, 'fuison_transformer': {'source_length': 8, 'tgt_length': 8, 'depth': 4, 'heads': 8, 'input_dim': 128, 'hidden_dim': 128}, 'regression': {'input_dim': 128, 'out_dim': 1}}}}
+seed is fixed to 1113
+ckpt root : ckpt/sims
+Train Loss Epoch 1: {'loss': 1.2692608833312988, 'l_sp': 0.573370561003685, 'l_cc': 0.16138552738861603, 'l_adv': 0.7261533357880332, 'l_rec': 1.149513461373069}
+Train Results Epoch 1: {'Mult_acc_2': np.float64(0.3084795321637427), 'Mult_acc_3': np.float64(0.25877192982456143), 'Mult_acc_5': np.float64(0.14327485380116958), 'F1_score': 0.14950728984897216, 'MAE': np.float32(0.64993465), 'Corr': np.float64(-0.006796970338647379)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.3048245614035088), 'Mult_acc_3': np.float64(0.25877192982456143), 'Mult_acc_5': np.float64(0.1425438596491228), 'F1_score': 0.14242223205071503, 'MAE': np.float32(0.6537698), 'Corr': np.float64(-0.11645393662283077)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.3063457330415755), 'Mult_acc_3': np.float64(0.2603938730853392), 'Mult_acc_5': np.float64(0.13785557986870897), 'F1_score': 0.14367974079001866, 'MAE': np.float32(0.6516689), 'Corr': np.float64(-0.04022724975777296)}
+
+Train Loss Epoch 2: {'loss': 1.2173989848657087, 'l_sp': 0.5332680114290931, 'l_cc': 0.15344523604620586, 'l_adv': 0.7217581922357733, 'l_rec': 1.1297534704208374}
+Train Results Epoch 2: {'Mult_acc_2': np.float64(0.6527777777777778), 'Mult_acc_3': np.float64(0.47514619883040937), 'Mult_acc_5': np.float64(0.20321637426900585), 'F1_score': 0.5800978630648961, 'MAE': np.float32(0.61747766), 'Corr': np.float64(-0.049973392738478846)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.21271929824561403), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59306765), 'Corr': np.float64(-0.11645393662283077)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.6936542669584245), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.212253829321663), 'F1_score': 0.5681870868884253, 'MAE': np.float32(0.5927586), 'Corr': np.float64(-0.04022724975777296)}
+
+Train Loss Epoch 3: {'loss': 1.1497801433910022, 'l_sp': 0.497087146748196, 'l_cc': 0.1360689950260249, 'l_adv': 0.7046493291854858, 'l_rec': 1.0744128985838457}
+Train Results Epoch 3: {'Mult_acc_2': np.float64(0.6637426900584795), 'Mult_acc_3': np.float64(0.3815789473684211), 'Mult_acc_5': np.float64(0.1871345029239766), 'F1_score': 0.59460615932264, 'MAE': np.float32(0.5984968), 'Corr': np.float64(-0.0025702784057119498)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.21271929824561403), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59284264), 'Corr': np.float64(-0.09222959365993708)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.6936542669584245), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.212253829321663), 'F1_score': 0.5681870868884253, 'MAE': np.float32(0.59151787), 'Corr': np.float64(-0.0011884573304849877)}
+
+Train Loss Epoch 4: {'loss': 1.0894315351139416, 'l_sp': 0.47994155369021674, 'l_cc': 0.11606334183703769, 'l_adv': 0.6754063042727384, 'l_rec': 0.9978918514468453}
+Train Results Epoch 4: {'Mult_acc_2': np.float64(0.685672514619883), 'Mult_acc_3': np.float64(0.4685672514619883), 'Mult_acc_5': np.float64(0.19371345029239767), 'F1_score': 0.584864262835533, 'MAE': np.float32(0.5939596), 'Corr': np.float64(0.038428970862067854)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.21271929824561403), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59284264), 'Corr': np.float64(-0.053558068042654665)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.6936542669584245), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.212253829321663), 'F1_score': 0.5681870868884253, 'MAE': np.float32(0.59151787), 'Corr': np.float64(0.07769610858624286)}
+
+Train Loss Epoch 5: {'loss': 1.0314165489240126, 'l_sp': 0.48151887546886096, 'l_cc': 0.0871897546405142, 'l_adv': 0.6308514638380571, 'l_rec': 0.9291600639169867}
+Train Results Epoch 5: {'Mult_acc_2': np.float64(0.6805555555555556), 'Mult_acc_3': np.float64(0.4027777777777778), 'Mult_acc_5': np.float64(0.19298245614035087), 'F1_score': 0.5943259006846691, 'MAE': np.float32(0.5875052), 'Corr': np.float64(0.09753154466097054)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.21271929824561403), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59284264), 'Corr': np.float64(-0.025908186458168975)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.6936542669584245), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.212253829321663), 'F1_score': 0.5681870868884253, 'MAE': np.float32(0.5913862), 'Corr': np.float64(0.07769610858624286)}
+
+Train Loss Epoch 6: {'loss': 0.9477872306650336, 'l_sp': 0.45395417375998065, 'l_cc': 0.05741654167121107, 'l_adv': 0.5935471816496416, 'l_rec': 0.8602984655987133}
+Train Results Epoch 6: {'Mult_acc_2': np.float64(0.6878654970760234), 'Mult_acc_3': np.float64(0.5073099415204678), 'Mult_acc_5': np.float64(0.21929824561403508), 'F1_score': 0.6225300790078118, 'MAE': np.float32(0.5688751), 'Corr': np.float64(0.238086349015656)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.21271929824561403), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59284264), 'Corr': np.float64(0.038450712795190405)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.6936542669584245), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.212253829321663), 'F1_score': 0.5681870868884253, 'MAE': np.float32(0.5913862), 'Corr': np.float64(0.10549141379540042)}
+
+Train Loss Epoch 7: {'loss': 0.8426672409881245, 'l_sp': 0.3854680630293759, 'l_cc': 0.0340693410993977, 'l_adv': 0.5921037630601362, 'l_rec': 0.7127450758760626}
+Train Results Epoch 7: {'Mult_acc_2': np.float64(0.6937134502923976), 'Mult_acc_3': np.float64(0.5190058479532164), 'Mult_acc_5': np.float64(0.2595029239766082), 'F1_score': 0.6875340628808039, 'MAE': np.float32(0.515352), 'Corr': np.float64(0.4334292905964801)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.21271929824561403), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59284264), 'Corr': np.float64(0.12890876960179362)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.6958424507658644), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.212253829321663), 'F1_score': 0.577167680438036, 'MAE': np.float32(0.58671975), 'Corr': np.float64(0.20856495648804405)}
+
+Train Loss Epoch 8: {'loss': 0.727533451535485, 'l_sp': 0.3030462292107669, 'l_cc': 0.02321598217399283, 'l_adv': 0.5842229398814115, 'l_rec': 0.5305906981229782}
+Train Results Epoch 8: {'Mult_acc_2': np.float64(0.7514619883040936), 'Mult_acc_3': np.float64(0.60453216374269), 'Mult_acc_5': np.float64(0.33260233918128657), 'F1_score': 0.7495355141325536, 'MAE': np.float32(0.43904838), 'Corr': np.float64(0.6086987349601042)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.21271929824561403), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.12890876960179362)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.6958424507658644), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.212253829321663), 'F1_score': 0.577167680438036, 'MAE': np.float32(0.5803885), 'Corr': np.float64(0.21526679107112964)}
+
+Train Loss Epoch 9: {'loss': 0.6236708245494149, 'l_sp': 0.2302226864478805, 'l_cc': 0.020482253283262253, 'l_adv': 0.5696535977450284, 'l_rec': 0.33221936225891113}
+Train Results Epoch 9: {'Mult_acc_2': np.float64(0.797514619883041), 'Mult_acc_3': np.float64(0.6754385964912281), 'Mult_acc_5': np.float64(0.41154970760233917), 'F1_score': 0.7941142352705599, 'MAE': np.float32(0.36499977), 'Corr': np.float64(0.7205897963700535)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.21271929824561403), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.12890876960179362)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.6958424507658644), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.212253829321663), 'F1_score': 0.577167680438036, 'MAE': np.float32(0.5803885), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 10: {'loss': 0.5767613080414858, 'l_sp': 0.20733866772868417, 'l_cc': 0.019273484041067688, 'l_adv': 0.5594075403430245, 'l_rec': 0.16431968557563695}
+Train Results Epoch 10: {'Mult_acc_2': np.float64(0.7909356725146199), 'Mult_acc_3': np.float64(0.6849415204678363), 'Mult_acc_5': np.float64(0.4678362573099415), 'F1_score': 0.7946068238861496, 'MAE': np.float32(0.3369472), 'Corr': np.float64(0.7489363739494035)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.12890876960179362)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.5803885), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 11: {'loss': 0.5753094526854429, 'l_sp': 0.22611846842549063, 'l_cc': 0.019645614676516165, 'l_adv': 0.5409355786713687, 'l_rec': 0.06948572515764019}
+Train Results Epoch 11: {'Mult_acc_2': np.float64(0.7880116959064327), 'Mult_acc_3': np.float64(0.679093567251462), 'Mult_acc_5': np.float64(0.44371345029239767), 'F1_score': 0.7907838829621442, 'MAE': np.float32(0.35603744), 'Corr': np.float64(0.730478004744411)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.12890876960179362)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 12: {'loss': 0.5026985650712793, 'l_sp': 0.16733390296047385, 'l_cc': 0.019167417618022722, 'l_adv': 0.5245611193505201, 'l_rec': 0.03377307705919851}
+Train Results Epoch 12: {'Mult_acc_2': np.float64(0.8223684210526315), 'Mult_acc_3': np.float64(0.716374269005848), 'Mult_acc_5': np.float64(0.52046783625731), 'F1_score': 0.8250111779155865, 'MAE': np.float32(0.2926007), 'Corr': np.float64(0.8052998227720685)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.12890876960179362)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 13: {'loss': 0.45927318795160815, 'l_sp': 0.1331770017065785, 'l_cc': 0.019562061325731604, 'l_adv': 0.5101648677479137, 'l_rec': 0.02391400890932842}
+Train Results Epoch 13: {'Mult_acc_2': np.float64(0.8369883040935673), 'Mult_acc_3': np.float64(0.7514619883040936), 'Mult_acc_5': np.float64(0.5833333333333334), 'F1_score': 0.8405387237299125, 'MAE': np.float32(0.25261524), 'Corr': np.float64(0.8519896151636434)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.12890876960179362)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 14: {'loss': 0.42073006386106665, 'l_sp': 0.09896498004143889, 'l_cc': 0.019328699404881758, 'l_adv': 0.5035276358777826, 'l_rec': 0.02252660192210566}
+Train Results Epoch 14: {'Mult_acc_2': np.float64(0.8633040935672515), 'Mult_acc_3': np.float64(0.7923976608187134), 'Mult_acc_5': np.float64(0.6513157894736842), 'F1_score': 0.8670529753532686, 'MAE': np.float32(0.20672862), 'Corr': np.float64(0.8915847200110827)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.12890876960179362)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 15: {'loss': 0.4197246025909077, 'l_sp': 0.10728635283356364, 'l_cc': 0.018658428728072482, 'l_adv': 0.48892342231490393, 'l_rec': 0.022916025439785284}
+Train Results Epoch 15: {'Mult_acc_2': np.float64(0.8523391812865497), 'Mult_acc_3': np.float64(0.7997076023391813), 'Mult_acc_5': np.float64(0.6396198830409356), 'F1_score': 0.8566043194990693, 'MAE': np.float32(0.21971728), 'Corr': np.float64(0.8819771002534135)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 16: {'loss': 0.4469315612857992, 'l_sp': 0.1282677318562161, 'l_cc': 0.019841012375598602, 'l_adv': 0.49733078344301745, 'l_rec': 0.024084356952119957}
+Train Results Epoch 16: {'Mult_acc_2': np.float64(0.8362573099415205), 'Mult_acc_3': np.float64(0.7638888888888888), 'Mult_acc_5': np.float64(0.5782163742690059), 'F1_score': 0.8399916441045755, 'MAE': np.float32(0.24450947), 'Corr': np.float64(0.8577382433735865)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 17: {'loss': 0.41253969073295593, 'l_sp': 0.10127461396835068, 'l_cc': 0.021847944664345545, 'l_adv': 0.4816714836792512, 'l_rec': 0.025990292091261257}
+Train Results Epoch 17: {'Mult_acc_2': np.float64(0.8552631578947368), 'Mult_acc_3': np.float64(0.7931286549707602), 'Mult_acc_5': np.float64(0.6118421052631579), 'F1_score': 0.8592567925973948, 'MAE': np.float32(0.2218063), 'Corr': np.float64(0.8899066825127029)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 18: {'loss': 0.3884748396548358, 'l_sp': 0.08104942535812204, 'l_cc': 0.022550408453257245, 'l_adv': 0.47370224920186127, 'l_rec': 0.029086929407309402}
+Train Results Epoch 18: {'Mult_acc_2': np.float64(0.8713450292397661), 'Mult_acc_3': np.float64(0.810672514619883), 'Mult_acc_5': np.float64(0.679093567251462), 'F1_score': 0.8748516814459429, 'MAE': np.float32(0.18827587), 'Corr': np.float64(0.9133834593265411)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 19: {'loss': 0.3954039365053177, 'l_sp': 0.09010844288224523, 'l_cc': 0.026448235847055912, 'l_adv': 0.4638109396804463, 'l_rec': 0.03205505106598139}
+Train Results Epoch 19: {'Mult_acc_2': np.float64(0.8779239766081871), 'Mult_acc_3': np.float64(0.810672514619883), 'Mult_acc_5': np.float64(0.672514619883041), 'F1_score': 0.880582811044374, 'MAE': np.float32(0.19708319), 'Corr': np.float64(0.9030346955366089)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 20: {'loss': 0.3795722194693305, 'l_sp': 0.08000636862760241, 'l_cc': 0.02543893134729429, 'l_adv': 0.45558358457955445, 'l_rec': 0.033206494355743583}
+Train Results Epoch 20: {'Mult_acc_2': np.float64(0.8764619883040936), 'Mult_acc_3': np.float64(0.8230994152046783), 'Mult_acc_5': np.float64(0.6864035087719298), 'F1_score': 0.8789948753396679, 'MAE': np.float32(0.18342946), 'Corr': np.float64(0.9125850301545609)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 21: {'loss': 0.3865926346995614, 'l_sp': 0.07366898825222795, 'l_cc': 0.03183358983898705, 'l_adv': 0.4675662287256934, 'l_rec': 0.0373366360806606}
+Train Results Epoch 21: {'Mult_acc_2': np.float64(0.8720760233918129), 'Mult_acc_3': np.float64(0.8362573099415205), 'Mult_acc_5': np.float64(0.7127192982456141), 'F1_score': 0.8753141487809889, 'MAE': np.float32(0.17410804), 'Corr': np.float64(0.920919520830777)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 22: {'loss': 0.3878950151530179, 'l_sp': 0.07719358793375167, 'l_cc': 0.034181778149848636, 'l_adv': 0.4603593796491623, 'l_rec': 0.0372218776663596}
+Train Results Epoch 22: {'Mult_acc_2': np.float64(0.8691520467836257), 'Mult_acc_3': np.float64(0.8296783625730995), 'Mult_acc_5': np.float64(0.7039473684210527), 'F1_score': 0.8726962221915635, 'MAE': np.float32(0.17422482), 'Corr': np.float64(0.9197530653400838)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 23: {'loss': 0.4061416197906841, 'l_sp': 0.0854428776285865, 'l_cc': 0.03732922182164409, 'l_adv': 0.47269500385631213, 'l_rec': 0.03485431183468212}
+Train Results Epoch 23: {'Mult_acc_2': np.float64(0.8720760233918129), 'Mult_acc_3': np.float64(0.8026315789473685), 'Mult_acc_5': np.float64(0.6578947368421053), 'F1_score': 0.8754969889516893, 'MAE': np.float32(0.19473495), 'Corr': np.float64(0.9085768356922769)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 24: {'loss': 0.4085975763472644, 'l_sp': 0.09728786925023253, 'l_cc': 0.04069110124625943, 'l_adv': 0.45148689909414813, 'l_rec': 0.0379556699401953}
+Train Results Epoch 24: {'Mult_acc_2': np.float64(0.8421052631578947), 'Mult_acc_3': np.float64(0.7997076023391813), 'Mult_acc_5': np.float64(0.631578947368421), 'F1_score': 0.8468570098791564, 'MAE': np.float32(0.20996094), 'Corr': np.float64(0.8951572966951472)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 25: {'loss': 0.4159962805834683, 'l_sp': 0.08887266359207305, 'l_cc': 0.04663386424495415, 'l_adv': 0.4683558371934024, 'l_rec': 0.04139626618813385}
+Train Results Epoch 25: {'Mult_acc_2': np.float64(0.8764619883040936), 'Mult_acc_3': np.float64(0.8055555555555556), 'Mult_acc_5': np.float64(0.6820175438596491), 'F1_score': 0.8789408849602968, 'MAE': np.float32(0.187433), 'Corr': np.float64(0.9141818553268033)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 26: {'loss': 0.3854816406965256, 'l_sp': 0.06790807529945266, 'l_cc': 0.04562869176945903, 'l_adv': 0.45595672726631165, 'l_rec': 0.02933701098134572}
+Train Results Epoch 26: {'Mult_acc_2': np.float64(0.8742690058479532), 'Mult_acc_3': np.float64(0.8179824561403509), 'Mult_acc_5': np.float64(0.6834795321637427), 'F1_score': 0.877428400059979, 'MAE': np.float32(0.17362534), 'Corr': np.float64(0.9289111050134486)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 27: {'loss': 0.38720299709926953, 'l_sp': 0.06763181479817088, 'l_cc': 0.04492452943866903, 'l_adv': 0.45936430448835547, 'l_rec': 0.03520511920479211}
+Train Results Epoch 27: {'Mult_acc_2': np.float64(0.8786549707602339), 'Mult_acc_3': np.float64(0.831140350877193), 'Mult_acc_5': np.float64(0.7171052631578947), 'F1_score': 0.8813231204167604, 'MAE': np.float32(0.16449544), 'Corr': np.float64(0.9303266280441675)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 28: {'loss': 0.3710179924964905, 'l_sp': 0.05606756350872191, 'l_cc': 0.04349356527778913, 'l_adv': 0.4545186297460036, 'l_rec': 0.030950317794287748}
+Train Results Epoch 28: {'Mult_acc_2': np.float64(0.8830409356725146), 'Mult_acc_3': np.float64(0.8538011695906432), 'Mult_acc_5': np.float64(0.7551169590643275), 'F1_score': 0.8864912043574597, 'MAE': np.float32(0.14663137), 'Corr': np.float64(0.9403053922714283)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 29: {'loss': 0.34383763237433, 'l_sp': 0.042377999306402424, 'l_cc': 0.046660907227884636, 'l_adv': 0.42668846114115283, 'l_rec': 0.034517335197464985}
+Train Results Epoch 29: {'Mult_acc_2': np.float64(0.9159356725146199), 'Mult_acc_3': np.float64(0.8779239766081871), 'Mult_acc_5': np.float64(0.8135964912280702), 'F1_score': 0.9174707412877677, 'MAE': np.float32(0.12311), 'Corr': np.float64(0.9578335006198974)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 30: {'loss': 0.3296404372562062, 'l_sp': 0.0361466451802037, 'l_cc': 0.046572968109764835, 'l_adv': 0.4129497137936679, 'l_rec': 0.03808283890512856}
+Train Results Epoch 30: {'Mult_acc_2': np.float64(0.902046783625731), 'Mult_acc_3': np.float64(0.8903508771929824), 'Mult_acc_5': np.float64(0.820906432748538), 'F1_score': 0.9048138587934094, 'MAE': np.float32(0.10811703), 'Corr': np.float64(0.9618281231436868)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 31: {'loss': 0.3254689641974189, 'l_sp': 0.03383566925979473, 'l_cc': 0.04584098353304646, 'l_adv': 0.4107343757694418, 'l_rec': 0.039357699284499344}
+Train Results Epoch 31: {'Mult_acc_2': np.float64(0.9005847953216374), 'Mult_acc_3': np.float64(0.8859649122807017), 'Mult_acc_5': np.float64(0.8289473684210527), 'F1_score': 0.903008137315905, 'MAE': np.float32(0.1021658), 'Corr': np.float64(0.964896865495958)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 32: {'loss': 0.33781934868205676, 'l_sp': 0.040037194288081744, 'l_cc': 0.04502661915665323, 'l_adv': 0.42286911471323535, 'l_rec': 0.035367225974120876}
+Train Results Epoch 32: {'Mult_acc_2': np.float64(0.9064327485380117), 'Mult_acc_3': np.float64(0.8779239766081871), 'Mult_acc_5': np.float64(0.8230994152046783), 'F1_score': 0.9084510675583096, 'MAE': np.float32(0.11000507), 'Corr': np.float64(0.9591017606402709)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 33: {'loss': 0.3391712700778788, 'l_sp': 0.043494672641496764, 'l_cc': 0.04606132556430318, 'l_adv': 0.41796893965114246, 'l_rec': 0.034400368871336635}
+Train Results Epoch 33: {'Mult_acc_2': np.float64(0.902046783625731), 'Mult_acc_3': np.float64(0.881578947368421), 'Mult_acc_5': np.float64(0.8062865497076024), 'F1_score': 0.9040763047580248, 'MAE': np.float32(0.12135198), 'Corr': np.float64(0.9549107452452223)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 34: {'loss': 0.345406866886399, 'l_sp': 0.042807843324474314, 'l_cc': 0.04400754059580239, 'l_adv': 0.4318107691678134, 'l_rec': 0.03905762579630722}
+Train Results Epoch 34: {'Mult_acc_2': np.float64(0.8866959064327485), 'Mult_acc_3': np.float64(0.8698830409356725), 'Mult_acc_5': np.float64(0.8128654970760234), 'F1_score': 0.8899148563757261, 'MAE': np.float32(0.122624315), 'Corr': np.float64(0.9551196457019373)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 35: {'loss': 0.38745613396167755, 'l_sp': 0.07568058947270567, 'l_cc': 0.044440896673636, 'l_adv': 0.44597252119671216, 'l_rec': 0.04195211539891633}
+Train Results Epoch 35: {'Mult_acc_2': np.float64(0.881578947368421), 'Mult_acc_3': np.float64(0.8238304093567251), 'Mult_acc_5': np.float64(0.7236842105263158), 'F1_score': 0.8841333823784855, 'MAE': np.float32(0.15509053), 'Corr': np.float64(0.9345211998496936)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 36: {'loss': 0.353357117284428, 'l_sp': 0.04680944809859449, 'l_cc': 0.04771619594909928, 'l_adv': 0.4339431307532571, 'l_rec': 0.03237195372242819}
+Train Results Epoch 36: {'Mult_acc_2': np.float64(0.9049707602339181), 'Mult_acc_3': np.float64(0.8355263157894737), 'Mult_acc_5': np.float64(0.7456140350877193), 'F1_score': 0.9062134647761335, 'MAE': np.float32(0.13781478), 'Corr': np.float64(0.9518797881664122)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.14245089252687732)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 37: {'loss': 0.3690352575345473, 'l_sp': 0.06299529681828889, 'l_cc': 0.05174205875532194, 'l_adv': 0.4262190826914527, 'l_rec': 0.037406416863880375}
+Train Results Epoch 37: {'Mult_acc_2': np.float64(0.868421052631579), 'Mult_acc_3': np.float64(0.8538011695906432), 'Mult_acc_5': np.float64(0.7624269005847953), 'F1_score': 0.8720951680176438, 'MAE': np.float32(0.14921945), 'Corr': np.float64(0.9364611342539249)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 38: {'loss': 0.3409638377753171, 'l_sp': 0.046298996841704305, 'l_cc': 0.0399227293885567, 'l_adv': 0.4252911616455425, 'l_rec': 0.0355968006293882}
+Train Results Epoch 38: {'Mult_acc_2': np.float64(0.8961988304093568), 'Mult_acc_3': np.float64(0.8618421052631579), 'Mult_acc_5': np.float64(0.777046783625731), 'F1_score': 0.8991643689717297, 'MAE': np.float32(0.1286539), 'Corr': np.float64(0.9538779582777343)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 39: {'loss': 0.3596209545027126, 'l_sp': 0.05196068105711178, 'l_cc': 0.040914393876763905, 'l_adv': 0.4462776373733174, 'l_rec': 0.03070724467662248}
+Train Results Epoch 39: {'Mult_acc_2': np.float64(0.8983918128654971), 'Mult_acc_3': np.float64(0.8428362573099415), 'Mult_acc_5': np.float64(0.7631578947368421), 'F1_score': 0.9005189064131116, 'MAE': np.float32(0.13222177), 'Corr': np.float64(0.9460791228190414)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 40: {'loss': 0.33072520927949384, 'l_sp': 0.04004506999626756, 'l_cc': 0.04299418983811682, 'l_adv': 0.41545637629248877, 'l_rec': 0.027115341191264717}
+Train Results Epoch 40: {'Mult_acc_2': np.float64(0.8940058479532164), 'Mult_acc_3': np.float64(0.85453216374269), 'Mult_acc_5': np.float64(0.783625730994152), 'F1_score': 0.8964866505050528, 'MAE': np.float32(0.12321732), 'Corr': np.float64(0.958281537841578)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 41: {'loss': 0.3544546216726303, 'l_sp': 0.050251379016448154, 'l_cc': 0.03801137953996658, 'l_adv': 0.44451732256195764, 'l_rec': 0.03282594680786133}
+Train Results Epoch 41: {'Mult_acc_2': np.float64(0.8969298245614035), 'Mult_acc_3': np.float64(0.8720760233918129), 'Mult_acc_5': np.float64(0.7997076023391813), 'F1_score': 0.8995764836966319, 'MAE': np.float32(0.12818088), 'Corr': np.float64(0.9472440012207306)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 42: {'loss': 0.32959920980713586, 'l_sp': 0.037360839418728246, 'l_cc': 0.04101656859909946, 'l_adv': 0.42105295305902307, 'l_rec': 0.026916741647503593}
+Train Results Epoch 42: {'Mult_acc_2': np.float64(0.8903508771929824), 'Mult_acc_3': np.float64(0.8757309941520468), 'Mult_acc_5': np.float64(0.8092105263157895), 'F1_score': 0.8933020673975796, 'MAE': np.float32(0.111421354), 'Corr': np.float64(0.9605315314683621)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 43: {'loss': 0.3312520831823349, 'l_sp': 0.039267160718075254, 'l_cc': 0.046484289267523723, 'l_adv': 0.4111015376719562, 'l_rec': 0.034881249916824425}
+Train Results Epoch 43: {'Mult_acc_2': np.float64(0.8932748538011696), 'Mult_acc_3': np.float64(0.8698830409356725), 'Mult_acc_5': np.float64(0.8150584795321637), 'F1_score': 0.8959566651671915, 'MAE': np.float32(0.11442627), 'Corr': np.float64(0.9601641804626815)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 44: {'loss': 0.3766140097921545, 'l_sp': 0.058847174725749275, 'l_cc': 0.05127698047594591, 'l_adv': 0.44675804674625397, 'l_rec': 0.03562715056944977}
+Train Results Epoch 44: {'Mult_acc_2': np.float64(0.881578947368421), 'Mult_acc_3': np.float64(0.8706140350877193), 'Mult_acc_5': np.float64(0.7807017543859649), 'F1_score': 0.8840325475432835, 'MAE': np.float32(0.13507919), 'Corr': np.float64(0.9374576911400639)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 45: {'loss': 0.33837890895930206, 'l_sp': 0.0401262403042479, 'l_cc': 0.04952375319871036, 'l_adv': 0.41730143942616205, 'l_rec': 0.03300419009544633}
+Train Results Epoch 45: {'Mult_acc_2': np.float64(0.9013157894736842), 'Mult_acc_3': np.float64(0.8764619883040936), 'Mult_acc_5': np.float64(0.8194444444444444), 'F1_score': 0.9037400716186623, 'MAE': np.float32(0.11194133), 'Corr': np.float64(0.9582708314026692)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 46: {'loss': 0.347145061601292, 'l_sp': 0.0451983099126003, 'l_cc': 0.0514797457409176, 'l_adv': 0.4197058068080382, 'l_rec': 0.03791473247110844}
+Train Results Epoch 46: {'Mult_acc_2': np.float64(0.8983918128654971), 'Mult_acc_3': np.float64(0.8728070175438597), 'Mult_acc_5': np.float64(0.8055555555555556), 'F1_score': 0.9006885332999914, 'MAE': np.float32(0.11954885), 'Corr': np.float64(0.9524867878597213)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 47: {'loss': 0.3445728610862385, 'l_sp': 0.054548663764514706, 'l_cc': 0.049372420984913006, 'l_adv': 0.4036629565737464, 'l_rec': 0.0339123916558244}
+Train Results Epoch 47: {'Mult_acc_2': np.float64(0.8969298245614035), 'Mult_acc_3': np.float64(0.8508771929824561), 'Mult_acc_5': np.float64(0.7814327485380117), 'F1_score': 0.8995764836966319, 'MAE': np.float32(0.13813978), 'Corr': np.float64(0.9432022341871039)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 48: {'loss': 0.3766012191772461, 'l_sp': 0.0610489814796231, 'l_cc': 0.0717025434767658, 'l_adv': 0.40751508420163934, 'l_rec': 0.06510891299694777}
+Train Results Epoch 48: {'Mult_acc_2': np.float64(0.8983918128654971), 'Mult_acc_3': np.float64(0.8676900584795322), 'Mult_acc_5': np.float64(0.7887426900584795), 'F1_score': 0.9010735422436652, 'MAE': np.float32(0.12727752), 'Corr': np.float64(0.9450602559393717)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 49: {'loss': 0.40416971797292883, 'l_sp': 0.08412651692263105, 'l_cc': 0.05158714975484393, 'l_adv': 0.44643508710644464, 'l_rec': 0.057537061754952774}
+Train Results Epoch 49: {'Mult_acc_2': np.float64(0.8742690058479532), 'Mult_acc_3': np.float64(0.831140350877193), 'Mult_acc_5': np.float64(0.7149122807017544), 'F1_score': 0.8779007076922768, 'MAE': np.float32(0.16660936), 'Corr': np.float64(0.9184148171798311)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 50: {'loss': 0.40005423805930396, 'l_sp': 0.084324777464975, 'l_cc': 0.05033160297369415, 'l_adv': 0.44273385405540466, 'l_rec': 0.047906994480978356}
+Train Results Epoch 50: {'Mult_acc_2': np.float64(0.8713450292397661), 'Mult_acc_3': np.float64(0.8135964912280702), 'Mult_acc_5': np.float64(0.6937134502923976), 'F1_score': 0.8742268868001254, 'MAE': np.float32(0.17792174), 'Corr': np.float64(0.9087085360009454)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 51: {'loss': 0.3350097266110507, 'l_sp': 0.04646452630616047, 'l_cc': 0.047900697301057255, 'l_adv': 0.4014310755512931, 'l_rec': 0.04575928385284814}
+Train Results Epoch 51: {'Mult_acc_2': np.float64(0.8866959064327485), 'Mult_acc_3': np.float64(0.8574561403508771), 'Mult_acc_5': np.float64(0.7777777777777778), 'F1_score': 0.8899508727454545, 'MAE': np.float32(0.1307816), 'Corr': np.float64(0.951180038441006)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 52: {'loss': 0.3389978300441395, 'l_sp': 0.046477847351607954, 'l_cc': 0.04608166395601901, 'l_adv': 0.41020712933757086, 'l_rec': 0.04922193635932424}
+Train Results Epoch 52: {'Mult_acc_2': np.float64(0.8764619883040936), 'Mult_acc_3': np.float64(0.8611111111111112), 'Mult_acc_5': np.float64(0.7997076023391813), 'F1_score': 0.8798912163607302, 'MAE': np.float32(0.1215766), 'Corr': np.float64(0.9508992813815856)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 53: {'loss': 0.36015561900355597, 'l_sp': 0.06083849419585683, 'l_cc': 0.04518670148470185, 'l_adv': 0.42260565134612, 'l_rec': 0.05085693977095864}
+Train Results Epoch 53: {'Mult_acc_2': np.float64(0.8932748538011696), 'Mult_acc_3': np.float64(0.8538011695906432), 'Mult_acc_5': np.float64(0.7646198830409356), 'F1_score': 0.8956215396436567, 'MAE': np.float32(0.13891457), 'Corr': np.float64(0.9364058836427478)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.16989803443816653)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 54: {'loss': 0.3612764775753021, 'l_sp': 0.053820143453776836, 'l_cc': 0.046679079701954666, 'l_adv': 0.43489002368666907, 'l_rec': 0.045111344111236656}
+Train Results Epoch 54: {'Mult_acc_2': np.float64(0.8852339181286549), 'Mult_acc_3': np.float64(0.8574561403508771), 'Mult_acc_5': np.float64(0.7858187134502924), 'F1_score': 0.8883424965590808, 'MAE': np.float32(0.13180846), 'Corr': np.float64(0.9470499924226814)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 55: {'loss': 0.35315044766122644, 'l_sp': 0.05682298837398941, 'l_cc': 0.04562551392750307, 'l_adv': 0.41708488897843793, 'l_rec': 0.05013553044674071}
+Train Results Epoch 55: {'Mult_acc_2': np.float64(0.8961988304093568), 'Mult_acc_3': np.float64(0.8611111111111112), 'Mult_acc_5': np.float64(0.7785087719298246), 'F1_score': 0.8984812234890361, 'MAE': np.float32(0.13897151), 'Corr': np.float64(0.9394949571423326)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 56: {'loss': 0.40387137911536475, 'l_sp': 0.09914577752351761, 'l_cc': 0.04360130640932105, 'l_adv': 0.43146074360067194, 'l_rec': 0.06607964380898258}
+Train Results Epoch 56: {'Mult_acc_2': np.float64(0.8764619883040936), 'Mult_acc_3': np.float64(0.8179824561403509), 'Mult_acc_5': np.float64(0.679093567251462), 'F1_score': 0.8794018889471732, 'MAE': np.float32(0.17648575), 'Corr': np.float64(0.912696194690574)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 57: {'loss': 0.37829659472812305, 'l_sp': 0.0654670252380046, 'l_cc': 0.06845871545374393, 'l_adv': 0.4062947549603202, 'l_rec': 0.07439861869947477}
+Train Results Epoch 57: {'Mult_acc_2': np.float64(0.8881578947368421), 'Mult_acc_3': np.float64(0.8457602339181286), 'Mult_acc_5': np.float64(0.7010233918128655), 'F1_score': 0.8907755691536074, 'MAE': np.float32(0.16528286), 'Corr': np.float64(0.9335607162181137)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 58: {'loss': 0.3984905792908235, 'l_sp': 0.09442648647183721, 'l_cc': 0.05921041076494889, 'l_adv': 0.40737379545515234, 'l_rec': 0.06350426545197313}
+Train Results Epoch 58: {'Mult_acc_2': np.float64(0.8852339181286549), 'Mult_acc_3': np.float64(0.8421052631578947), 'Mult_acc_5': np.float64(0.7171052631578947), 'F1_score': 0.8881389791920873, 'MAE': np.float32(0.16763382), 'Corr': np.float64(0.9122939666933507)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 59: {'loss': 0.4123587066476995, 'l_sp': 0.09101714769547636, 'l_cc': 0.05814464026215402, 'l_adv': 0.43580938604744995, 'l_rec': 0.07525735450061885}
+Train Results Epoch 59: {'Mult_acc_2': np.float64(0.8654970760233918), 'Mult_acc_3': np.float64(0.8011695906432749), 'Mult_acc_5': np.float64(0.668859649122807), 'F1_score': 0.868826668068729, 'MAE': np.float32(0.19539946), 'Corr': np.float64(0.9116544495994717)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 60: {'loss': 0.3744761496782303, 'l_sp': 0.06543416038832882, 'l_cc': 0.053530195727944374, 'l_adv': 0.4235197915272279, 'l_rec': 0.06752927364273505}
+Train Results Epoch 60: {'Mult_acc_2': np.float64(0.8837719298245614), 'Mult_acc_3': np.float64(0.827485380116959), 'Mult_acc_5': np.float64(0.7010233918128655), 'F1_score': 0.8863515774297689, 'MAE': np.float32(0.16954073), 'Corr': np.float64(0.9312500686870597)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 61: {'loss': 0.3330830823291432, 'l_sp': 0.041478537107733165, 'l_cc': 0.0487644626674327, 'l_adv': 0.4021974084052173, 'l_rec': 0.06398072229190306}
+Train Results Epoch 61: {'Mult_acc_2': np.float64(0.8801169590643275), 'Mult_acc_3': np.float64(0.8611111111111112), 'Mult_acc_5': np.float64(0.777046783625731), 'F1_score': 0.8836534844663961, 'MAE': np.float32(0.12568049), 'Corr': np.float64(0.9578482508762849)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 62: {'loss': 0.33449624343351886, 'l_sp': 0.037888170262290674, 'l_cc': 0.04551922309805046, 'l_adv': 0.4170349741523916, 'l_rec': 0.05419783057136969}
+Train Results Epoch 62: {'Mult_acc_2': np.float64(0.8903508771929824), 'Mult_acc_3': np.float64(0.8845029239766082), 'Mult_acc_5': np.float64(0.8055555555555556), 'F1_score': 0.8932254595687964, 'MAE': np.float32(0.11677794), 'Corr': np.float64(0.9607040304688517)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 63: {'loss': 0.30601898445324466, 'l_sp': 0.027173004155470568, 'l_cc': 0.0440793362530795, 'l_adv': 0.39239352535117755, 'l_rec': 0.03738449810242111}
+Train Results Epoch 63: {'Mult_acc_2': np.float64(0.8976608187134503), 'Mult_acc_3': np.float64(0.9217836257309941), 'Mult_acc_5': np.float64(0.8618421052631579), 'F1_score': 0.9005184640137228, 'MAE': np.float32(0.09454949), 'Corr': np.float64(0.9717389825805478)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 64: {'loss': 0.34097769450057636, 'l_sp': 0.040460713588717306, 'l_cc': 0.04293350519781763, 'l_adv': 0.429824100299315, 'l_rec': 0.039823514240031894}
+Train Results Epoch 64: {'Mult_acc_2': np.float64(0.8947368421052632), 'Mult_acc_3': np.float64(0.8998538011695907), 'Mult_acc_5': np.float64(0.8245614035087719), 'F1_score': 0.8974206555520174, 'MAE': np.float32(0.107720315), 'Corr': np.float64(0.9580587187956745)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 65: {'loss': 0.3333983759988438, 'l_sp': 0.04012997931038791, 'l_cc': 0.04293741031803868, 'l_adv': 0.41780384426767175, 'l_rec': 0.03942409885877913}
+Train Results Epoch 65: {'Mult_acc_2': np.float64(0.8888888888888888), 'Mult_acc_3': np.float64(0.8720760233918129), 'Mult_acc_5': np.float64(0.8062865497076024), 'F1_score': 0.891879428296214, 'MAE': np.float32(0.11400377), 'Corr': np.float64(0.9599510484180224)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 66: {'loss': 0.34597970003431494, 'l_sp': 0.047886090353131294, 'l_cc': 0.04935886143622073, 'l_adv': 0.4160990538922223, 'l_rec': 0.04011186821894212}
+Train Results Epoch 66: {'Mult_acc_2': np.float64(0.9013157894736842), 'Mult_acc_3': np.float64(0.8925438596491229), 'Mult_acc_5': np.float64(0.797514619883041), 'F1_score': 0.9038853490681166, 'MAE': np.float32(0.12427909), 'Corr': np.float64(0.9545652991808398)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 67: {'loss': 0.3337345746430484, 'l_sp': 0.04243477103723721, 'l_cc': 0.04813385687091134, 'l_adv': 0.40761317719112744, 'l_rec': 0.034114127132025635}
+Train Results Epoch 67: {'Mult_acc_2': np.float64(0.8918128654970761), 'Mult_acc_3': np.float64(0.8779239766081871), 'Mult_acc_5': np.float64(0.7982456140350878), 'F1_score': 0.8946491201078792, 'MAE': np.float32(0.12059958), 'Corr': np.float64(0.9572133318442485)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 68: {'loss': 0.3472504290667447, 'l_sp': 0.04777037580920891, 'l_cc': 0.051214156418361446, 'l_adv': 0.4166614460674199, 'l_rec': 0.033904403786767616}
+Train Results Epoch 68: {'Mult_acc_2': np.float64(0.8830409356725146), 'Mult_acc_3': np.float64(0.8793859649122807), 'Mult_acc_5': np.float64(0.8070175438596491), 'F1_score': 0.8862288013144936, 'MAE': np.float32(0.12510829), 'Corr': np.float64(0.954868393903129)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.17622104857768417)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 69: {'loss': 0.35881430181589996, 'l_sp': 0.0494456629014828, 'l_cc': 0.049794460900805214, 'l_adv': 0.4357624108141119, 'l_rec': 0.030961671166799286}
+Train Results Epoch 69: {'Mult_acc_2': np.float64(0.9027777777777778), 'Mult_acc_3': np.float64(0.8779239766081871), 'Mult_acc_5': np.float64(0.8011695906432749), 'F1_score': 0.9049753592007114, 'MAE': np.float32(0.12532945), 'Corr': np.float64(0.9476821508272901)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.18390732170480276)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 70: {'loss': 0.31867715174501593, 'l_sp': 0.0348245817321268, 'l_cc': 0.04602609253065153, 'l_adv': 0.39972310039130127, 'l_rec': 0.02595219930464571}
+Train Results Epoch 70: {'Mult_acc_2': np.float64(0.8932748538011696), 'Mult_acc_3': np.float64(0.8691520467836257), 'Mult_acc_5': np.float64(0.7858187134502924), 'F1_score': 0.8961473456003108, 'MAE': np.float32(0.1157941), 'Corr': np.float64(0.9655239805190496)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.18628274160058778)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 71: {'loss': 0.3294852470809763, 'l_sp': 0.040810289813882926, 'l_cc': 0.04723450406031175, 'l_adv': 0.4045640541748567, 'l_rec': 0.034254659729247745}
+Train Results Epoch 71: {'Mult_acc_2': np.float64(0.8888888888888888), 'Mult_acc_3': np.float64(0.875), 'Mult_acc_5': np.float64(0.7931286549707602), 'F1_score': 0.8920982998210819, 'MAE': np.float32(0.11380829), 'Corr': np.float64(0.9622861090746394)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.18628274160058778)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 72: {'loss': 0.31940477138215845, 'l_sp': 0.033248155885799366, 'l_cc': 0.04493272931061008, 'l_adv': 0.4040615531531247, 'l_rec': 0.03280221239071001}
+Train Results Epoch 72: {'Mult_acc_2': np.float64(0.9181286549707602), 'Mult_acc_3': np.float64(0.8866959064327485), 'Mult_acc_5': np.float64(0.8172514619883041), 'F1_score': 0.9198249711410357, 'MAE': np.float32(0.10647533), 'Corr': np.float64(0.9665545363473171)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.18628274160058778)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 73: {'loss': 0.31357297030362213, 'l_sp': 0.031456552488221365, 'l_cc': 0.04524104771288959, 'l_adv': 0.39735016362233594, 'l_rec': 0.029893773184581238}
+Train Results Epoch 73: {'Mult_acc_2': np.float64(0.8896198830409356), 'Mult_acc_3': np.float64(0.908625730994152), 'Mult_acc_5': np.float64(0.8552631578947368), 'F1_score': 0.8927557633079654, 'MAE': np.float32(0.0940948), 'Corr': np.float64(0.9712597964586649)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 74: {'loss': 0.34589720314199274, 'l_sp': 0.04820182398808273, 'l_cc': 0.049201883798973126, 'l_adv': 0.4165805239569057, 'l_rec': 0.034653654152696785}
+Train Results Epoch 74: {'Mult_acc_2': np.float64(0.8918128654970761), 'Mult_acc_3': np.float64(0.868421052631579), 'Mult_acc_5': np.float64(0.7792397660818714), 'F1_score': 0.8945314140050982, 'MAE': np.float32(0.12123359), 'Corr': np.float64(0.9501678139000999)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 75: {'loss': 0.33437605744058435, 'l_sp': 0.040225628721104426, 'l_cc': 0.05176257596097209, 'l_adv': 0.40759692273356696, 'l_rec': 0.030059468593787064}
+Train Results Epoch 75: {'Mult_acc_2': np.float64(0.8823099415204678), 'Mult_acc_3': np.float64(0.8881578947368421), 'Mult_acc_5': np.float64(0.8172514619883041), 'F1_score': 0.8858688724100254, 'MAE': np.float32(0.11424233), 'Corr': np.float64(0.9590352336464867)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 76: {'loss': 0.33488149128176947, 'l_sp': 0.03835200145840645, 'l_cc': 0.04916437037966468, 'l_adv': 0.4159894165667621, 'l_rec': 0.02687905936247923}
+Train Results Epoch 76: {'Mult_acc_2': np.float64(0.908625730994152), 'Mult_acc_3': np.float64(0.8969298245614035), 'Mult_acc_5': np.float64(0.831140350877193), 'F1_score': 0.9106911270683377, 'MAE': np.float32(0.114517145), 'Corr': np.float64(0.9606698366353427)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 77: {'loss': 0.34294286234812305, 'l_sp': 0.0391416508408094, 'l_cc': 0.04855561832135374, 'l_adv': 0.42884939908981323, 'l_rec': 0.027915057345208796}
+Train Results Epoch 77: {'Mult_acc_2': np.float64(0.8998538011695907), 'Mult_acc_3': np.float64(0.8998538011695907), 'Mult_acc_5': np.float64(0.8252923976608187), 'F1_score': 0.9024969445135405, 'MAE': np.float32(0.113177665), 'Corr': np.float64(0.9602437249377347)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 78: {'loss': 0.3337522894144058, 'l_sp': 0.0434818301688541, 'l_cc': 0.05043804950334809, 'l_adv': 0.40328989110209723, 'l_rec': 0.02902274104681882}
+Train Results Epoch 78: {'Mult_acc_2': np.float64(0.9027777777777778), 'Mult_acc_3': np.float64(0.8874269005847953), 'Mult_acc_5': np.float64(0.8172514619883041), 'F1_score': 0.9051661446317192, 'MAE': np.float32(0.11333457), 'Corr': np.float64(0.9585083452536224)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 79: {'loss': 0.3479017588225278, 'l_sp': 0.04372037498449737, 'l_cc': 0.05895805477418683, 'l_adv': 0.4128672575408762, 'l_rec': 0.03398768248205835}
+Train Results Epoch 79: {'Mult_acc_2': np.float64(0.8947368421052632), 'Mult_acc_3': np.float64(0.8779239766081871), 'Mult_acc_5': np.float64(0.8019005847953217), 'F1_score': 0.8974964411860445, 'MAE': np.float32(0.11951428), 'Corr': np.float64(0.9562476487325507)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 80: {'loss': 0.3378299576315013, 'l_sp': 0.041493918408047066, 'l_cc': 0.05800580995326692, 'l_adv': 0.40152000161734497, 'l_rec': 0.0321880311451175}
+Train Results Epoch 80: {'Mult_acc_2': np.float64(0.9173976608187134), 'Mult_acc_3': np.float64(0.8859649122807017), 'Mult_acc_5': np.float64(0.793859649122807), 'F1_score': 0.9191620482058718, 'MAE': np.float32(0.12042138), 'Corr': np.float64(0.9578577946223831)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 81: {'loss': 0.3396999172189019, 'l_sp': 0.04270782084627585, 'l_cc': 0.06226798434826461, 'l_adv': 0.3956774432550777, 'l_rec': 0.03544442304833369}
+Train Results Epoch 81: {'Mult_acc_2': np.float64(0.8932748538011696), 'Mult_acc_3': np.float64(0.8793859649122807), 'Mult_acc_5': np.float64(0.7997076023391813), 'F1_score': 0.8962196551475742, 'MAE': np.float32(0.11788906), 'Corr': np.float64(0.9558946891342713)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 82: {'loss': 0.3532445092092861, 'l_sp': 0.04480920753187754, 'l_cc': 0.061483056877147065, 'l_adv': 0.4156255749138919, 'l_rec': 0.03725195820020004}
+Train Results Epoch 82: {'Mult_acc_2': np.float64(0.8925438596491229), 'Mult_acc_3': np.float64(0.9005847953216374), 'Mult_acc_5': np.float64(0.8223684210526315), 'F1_score': 0.8954174707194192, 'MAE': np.float32(0.11365828), 'Corr': np.float64(0.955753571918917)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 83: {'loss': 0.357276053591208, 'l_sp': 0.04947350563650781, 'l_cc': 0.058136751197955826, 'l_adv': 0.4202689799395474, 'l_rec': 0.03318078714338216}
+Train Results Epoch 83: {'Mult_acc_2': np.float64(0.8961988304093568), 'Mult_acc_3': np.float64(0.8603801169590644), 'Mult_acc_5': np.float64(0.7741228070175439), 'F1_score': 0.8989566380419624, 'MAE': np.float32(0.13669524), 'Corr': np.float64(0.9481811706326753)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 84: {'loss': 0.33404420858079736, 'l_sp': 0.03580011198805137, 'l_cc': 0.05581895905462178, 'l_adv': 0.40817773883992975, 'l_rec': 0.03100383501838554}
+Train Results Epoch 84: {'Mult_acc_2': np.float64(0.9035087719298246), 'Mult_acc_3': np.float64(0.8779239766081871), 'Mult_acc_5': np.float64(0.8011695906432749), 'F1_score': 0.9060039272706715, 'MAE': np.float32(0.11319706), 'Corr': np.float64(0.9643808152862944)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 85: {'loss': 0.347285194830461, 'l_sp': 0.042815326459028503, 'l_cc': 0.05393810908902775, 'l_adv': 0.4210923232815482, 'l_rec': 0.03270170287313787}
+Train Results Epoch 85: {'Mult_acc_2': np.float64(0.9108187134502924), 'Mult_acc_3': np.float64(0.8969298245614035), 'Mult_acc_5': np.float64(0.8165204678362573), 'F1_score': 0.9128163647137232, 'MAE': np.float32(0.11698314), 'Corr': np.float64(0.9555473900684621)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 86: {'loss': 0.24630314382639798, 'l_sp': 0.04921284635466608, 'l_cc': 0.056096735495057976, 'l_adv': 0.23794794929298488, 'l_rec': 0.03834463156421076}
+Train Results Epoch 86: {'Mult_acc_2': np.float64(0.8947368421052632), 'Mult_acc_3': np.float64(0.8874269005847953), 'Mult_acc_5': np.float64(0.7821637426900585), 'F1_score': 0.8973819163292848, 'MAE': np.float32(0.12964326), 'Corr': np.float64(0.9496980066640448)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5426695842450766), 'Mult_acc_5': np.float64(0.3041575492341357), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 87: {'loss': 0.14665983041579073, 'l_sp': 0.06146471058441834, 'l_cc': 0.05780289779332551, 'l_adv': 0.04977058805525303, 'l_rec': 0.03310159712352536}
+Train Results Epoch 87: {'Mult_acc_2': np.float64(0.8940058479532164), 'Mult_acc_3': np.float64(0.8494152046783626), 'Mult_acc_5': np.float64(0.7309941520467836), 'F1_score': 0.896982880605915, 'MAE': np.float32(0.14530514), 'Corr': np.float64(0.9501613934209129)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3150984682713348), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 88: {'loss': 0.14980127289891243, 'l_sp': 0.07087851163338531, 'l_cc': 0.05850660690868443, 'l_adv': 0.03757078708572821, 'l_rec': 0.03724343372000889}
+Train Results Epoch 88: {'Mult_acc_2': np.float64(0.8866959064327485), 'Mult_acc_3': np.float64(0.814327485380117), 'Mult_acc_5': np.float64(0.6549707602339181), 'F1_score': 0.8890678452808078, 'MAE': np.float32(0.17795359), 'Corr': np.float64(0.9319593056516752)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3150984682713348), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 89: {'loss': 0.09831207143989476, 'l_sp': 0.03396776631813158, 'l_cc': 0.05292130820453167, 'l_adv': 0.02220351401377808, 'l_rec': 0.03393019862811674}
+Train Results Epoch 89: {'Mult_acc_2': np.float64(0.9173976608187134), 'Mult_acc_3': np.float64(0.8830409356725146), 'Mult_acc_5': np.float64(0.8011695906432749), 'F1_score': 0.9191620482058718, 'MAE': np.float32(0.11725177), 'Corr': np.float64(0.966541378616127)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3150984682713348), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 90: {'loss': 0.09226404469121587, 'l_sp': 0.035831200424581766, 'l_cc': 0.046564380045641555, 'l_adv': 0.018281276083805344, 'l_rec': 0.03556138395585797}
+Train Results Epoch 90: {'Mult_acc_2': np.float64(0.9144736842105263), 'Mult_acc_3': np.float64(0.8983918128654971), 'Mult_acc_5': np.float64(0.8223684210526315), 'F1_score': 0.9165090000403506, 'MAE': np.float32(0.11359653), 'Corr': np.float64(0.9635966289954474)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3150984682713348), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 91: {'loss': 0.08168523115190593, 'l_sp': 0.030928885098546743, 'l_cc': 0.04305559583008289, 'l_adv': 0.014190385499122467, 'l_rec': 0.03492078066549518}
+Train Results Epoch 91: {'Mult_acc_2': np.float64(0.9057017543859649), 'Mult_acc_3': np.float64(0.8998538011695907), 'Mult_acc_5': np.float64(0.841374269005848), 'F1_score': 0.908053757648582, 'MAE': np.float32(0.10319265), 'Corr': np.float64(0.9691097370771288)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3150984682713348), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 92: {'loss': 0.09126373160291802, 'l_sp': 0.04190774101086638, 'l_cc': 0.04194806897166101, 'l_adv': 0.013264564331620932, 'l_rec': 0.03643991247835485}
+Train Results Epoch 92: {'Mult_acc_2': np.float64(0.89546783625731), 'Mult_acc_3': np.float64(0.8932748538011696), 'Mult_acc_5': np.float64(0.8267543859649122), 'F1_score': 0.8982632538290947, 'MAE': np.float32(0.109108865), 'Corr': np.float64(0.9622769651848379)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 93: {'loss': 0.08778862909159878, 'l_sp': 0.03568152168934995, 'l_cc': 0.04657171776687557, 'l_adv': 0.01138978263109245, 'l_rec': 0.03358692870560018}
+Train Results Epoch 93: {'Mult_acc_2': np.float64(0.8991228070175439), 'Mult_acc_3': np.float64(0.8625730994152047), 'Mult_acc_5': np.float64(0.7828947368421053), 'F1_score': 0.9015430236005116, 'MAE': np.float32(0.11507842), 'Corr': np.float64(0.9633639398611334)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 94: {'loss': 0.08553457903591069, 'l_sp': 0.03568636109544472, 'l_cc': 0.04389569510451772, 'l_adv': 0.011895663507113402, 'l_rec': 0.0320469584654678}
+Train Results Epoch 94: {'Mult_acc_2': np.float64(0.9093567251461988), 'Mult_acc_3': np.float64(0.8801169590643275), 'Mult_acc_5': np.float64(0.8114035087719298), 'F1_score': 0.9114960876086564, 'MAE': np.float32(0.113856755), 'Corr': np.float64(0.9656898692409503)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 95: {'loss': 0.0879039451141249, 'l_sp': 0.038891215893355285, 'l_cc': 0.04100002365356142, 'l_adv': 0.014110967601564798, 'l_rec': 0.036461277018216526}
+Train Results Epoch 95: {'Mult_acc_2': np.float64(0.902046783625731), 'Mult_acc_3': np.float64(0.8961988304093568), 'Mult_acc_5': np.float64(0.8296783625730995), 'F1_score': 0.9045442211386828, 'MAE': np.float32(0.10984903), 'Corr': np.float64(0.9596634535170252)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 96: {'loss': 0.086017455059019, 'l_sp': 0.03940719116309827, 'l_cc': 0.03548596731641076, 'l_adv': 0.018411263696510683, 'l_rec': 0.03626135364174843}
+Train Results Epoch 96: {'Mult_acc_2': np.float64(0.89546783625731), 'Mult_acc_3': np.float64(0.8910818713450293), 'Mult_acc_5': np.float64(0.8157894736842105), 'F1_score': 0.8982992166111373, 'MAE': np.float32(0.1105809), 'Corr': np.float64(0.9590930752881017)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 97: {'loss': 0.07305210456252098, 'l_sp': 0.02796455222943967, 'l_cc': 0.03465638326650316, 'l_adv': 0.01731917594390159, 'l_rec': 0.035053020173853096}
+Train Results Epoch 97: {'Mult_acc_2': np.float64(0.9049707602339181), 'Mult_acc_3': np.float64(0.9035087719298246), 'Mult_acc_5': np.float64(0.8486842105263158), 'F1_score': 0.9073586744639376, 'MAE': np.float32(0.09201057), 'Corr': np.float64(0.971406323465063)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 98: {'loss': 0.08088853159411387, 'l_sp': 0.03547928262163292, 'l_cc': 0.031454460780051624, 'l_adv': 0.022798743268305607, 'l_rec': 0.034209868108684365}
+Train Results Epoch 98: {'Mult_acc_2': np.float64(0.8903508771929824), 'Mult_acc_3': np.float64(0.8969298245614035), 'Mult_acc_5': np.float64(0.8464912280701754), 'F1_score': 0.8933763580283295, 'MAE': np.float32(0.09921832), 'Corr': np.float64(0.9631916827038474)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 99: {'loss': 0.09567011875862425, 'l_sp': 0.041213078212670305, 'l_cc': 0.03175230671397664, 'l_adv': 0.037163666618818585, 'l_rec': 0.03581764692948623}
+Train Results Epoch 99: {'Mult_acc_2': np.float64(0.8969298245614035), 'Mult_acc_3': np.float64(0.8888888888888888), 'Mult_acc_5': np.float64(0.8099415204678363), 'F1_score': 0.8996135868044776, 'MAE': np.float32(0.114788644), 'Corr': np.float64(0.9595898679099797)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 100: {'loss': 0.1557841622693972, 'l_sp': 0.041278443383899605, 'l_cc': 0.028719191439449787, 'l_adv': 0.13920058208433064, 'l_rec': 0.051380930468440056}
+Train Results Epoch 100: {'Mult_acc_2': np.float64(0.9078947368421053), 'Mult_acc_3': np.float64(0.8947368421052632), 'Mult_acc_5': np.float64(0.8165204678362573), 'F1_score': 0.9101398919250298, 'MAE': np.float32(0.11276435), 'Corr': np.float64(0.9603861025136746)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 101: {'loss': 0.21930876916105096, 'l_sp': 0.051983836868947204, 'l_cc': 0.050742701373317024, 'l_adv': 0.1903416561809453, 'l_rec': 0.07451502166011116}
+Train Results Epoch 101: {'Mult_acc_2': np.float64(0.8852339181286549), 'Mult_acc_3': np.float64(0.8830409356725146), 'Mult_acc_5': np.float64(0.7923976608187134), 'F1_score': 0.8887373801971667, 'MAE': np.float32(0.12642422), 'Corr': np.float64(0.9505266383838759)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 102: {'loss': 0.34100390022451227, 'l_sp': 0.061502592638134956, 'l_cc': 0.09789174422621727, 'l_adv': 0.29934417930516327, 'l_rec': 0.11792223663492636}
+Train Results Epoch 102: {'Mult_acc_2': np.float64(0.9042397660818714), 'Mult_acc_3': np.float64(0.8603801169590644), 'Mult_acc_5': np.float64(0.7741228070175439), 'F1_score': 0.9065186239768028, 'MAE': np.float32(0.13200153), 'Corr': np.float64(0.9415269408466507)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 103: {'loss': 0.46998887305909937, 'l_sp': 0.044971470721066, 'l_cc': 0.05633137595247139, 'l_adv': 0.6057409075173464, 'l_rec': 0.10874612866477533}
+Train Results Epoch 103: {'Mult_acc_2': np.float64(0.9071637426900585), 'Mult_acc_3': np.float64(0.8793859649122807), 'Mult_acc_5': np.float64(0.7858187134502924), 'F1_score': 0.9094089431466809, 'MAE': np.float32(0.118642576), 'Corr': np.float64(0.9541940398299457)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 104: {'loss': 0.3481926931576295, 'l_sp': 0.03551264907318083, 'l_cc': 0.0397584569555792, 'l_adv': 0.44816442240368237, 'l_rec': 0.07998770560053262}
+Train Results Epoch 104: {'Mult_acc_2': np.float64(0.8932748538011696), 'Mult_acc_3': np.float64(0.8888888888888888), 'Mult_acc_5': np.float64(0.8172514619883041), 'F1_score': 0.896289726745058, 'MAE': np.float32(0.11118919), 'Corr': np.float64(0.9636058588529373)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 105: {'loss': 0.3074833235957406, 'l_sp': 0.02339139460078017, 'l_cc': 0.03731917759234255, 'l_adv': 0.4081930748441003, 'l_rec': 0.055888165296478706}
+Train Results Epoch 105: {'Mult_acc_2': np.float64(0.9173976608187134), 'Mult_acc_3': np.float64(0.9429824561403509), 'Mult_acc_5': np.float64(0.9057017543859649), 'F1_score': 0.9193953588627949, 'MAE': np.float32(0.074670665), 'Corr': np.float64(0.9772088865986076)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 106: {'loss': 0.3232471516186541, 'l_sp': 0.031411151782694186, 'l_cc': 0.03802506811916828, 'l_adv': 0.42014019055800006, 'l_rec': 0.05529314355755394}
+Train Results Epoch 106: {'Mult_acc_2': np.float64(0.8918128654970761), 'Mult_acc_3': np.float64(0.9210526315789473), 'Mult_acc_5': np.float64(0.8633040935672515), 'F1_score': 0.8950368042063765, 'MAE': np.float32(0.08762176), 'Corr': np.float64(0.9711712653582507)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 107: {'loss': 0.31713399155573413, 'l_sp': 0.03319209756922315, 'l_cc': 0.03626516029577364, 'l_adv': 0.4100639440796592, 'l_rec': 0.052648803727193313}
+Train Results Epoch 107: {'Mult_acc_2': np.float64(0.9042397660818714), 'Mult_acc_3': np.float64(0.9130116959064327), 'Mult_acc_5': np.float64(0.8552631578947368), 'F1_score': 0.9068979251080217, 'MAE': np.float32(0.09401665), 'Corr': np.float64(0.9685001930657703)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 108: {'loss': 0.3299624852158807, 'l_sp': 0.030033838363703002, 'l_cc': 0.03561803571541201, 'l_adv': 0.43815483152866364, 'l_rec': 0.049795049666003746}
+Train Results Epoch 108: {'Mult_acc_2': np.float64(0.9035087719298246), 'Mult_acc_3': np.float64(0.9371345029239766), 'Mult_acc_5': np.float64(0.8866959064327485), 'F1_score': 0.9062654697483684, 'MAE': np.float32(0.08359922), 'Corr': np.float64(0.9725602799412403)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 109: {'loss': 0.3039733801375736, 'l_sp': 0.022045089334080167, 'l_cc': 0.03577805335887454, 'l_adv': 0.40903865884650836, 'l_rec': 0.04304833955724131}
+Train Results Epoch 109: {'Mult_acc_2': np.float64(0.908625730994152), 'Mult_acc_3': np.float64(0.9276315789473685), 'Mult_acc_5': np.float64(0.8918128654970761), 'F1_score': 0.9110373581327923, 'MAE': np.float32(0.07987008), 'Corr': np.float64(0.9777277941864068)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 110: {'loss': 0.30400934544476593, 'l_sp': 0.026582044655118476, 'l_cc': 0.033952539109370926, 'l_adv': 0.40417245572263544, 'l_rec': 0.043665329333056106}
+Train Results Epoch 110: {'Mult_acc_2': np.float64(0.9035087719298246), 'Mult_acc_3': np.float64(0.9480994152046783), 'Mult_acc_5': np.float64(0.9115497076023392), 'F1_score': 0.9061711950649299, 'MAE': np.float32(0.07316826), 'Corr': np.float64(0.9743985555983086)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 111: {'loss': 0.34227279776876623, 'l_sp': 0.04289964785460721, 'l_cc': 0.03382963771847161, 'l_adv': 0.4399953945116563, 'l_rec': 0.049292253076352856}
+Train Results Epoch 111: {'Mult_acc_2': np.float64(0.8940058479532164), 'Mult_acc_3': np.float64(0.8961988304093568), 'Mult_acc_5': np.float64(0.8296783625730995), 'F1_score': 0.8969480850432302, 'MAE': np.float32(0.112093), 'Corr': np.float64(0.9598248858201106)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 112: {'loss': 0.33414123410528357, 'l_sp': 0.038614548023112795, 'l_cc': 0.03477883779189803, 'l_adv': 0.4322672310200604, 'l_rec': 0.04865382874215191}
+Train Results Epoch 112: {'Mult_acc_2': np.float64(0.8932748538011696), 'Mult_acc_3': np.float64(0.8947368421052632), 'Mult_acc_5': np.float64(0.831140350877193), 'F1_score': 0.8960346468296821, 'MAE': np.float32(0.11148174), 'Corr': np.float64(0.9598782681790502)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 113: {'loss': 0.3024170981212096, 'l_sp': 0.022521607493135063, 'l_cc': 0.033221229826184834, 'l_adv': 0.4104050208221782, 'l_rec': 0.03753366812386296}
+Train Results Epoch 113: {'Mult_acc_2': np.float64(0.8998538011695907), 'Mult_acc_3': np.float64(0.9195906432748538), 'Mult_acc_5': np.float64(0.868421052631579), 'F1_score': 0.9026665837448989, 'MAE': np.float32(0.083295524), 'Corr': np.float64(0.9774833452944882)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 114: {'loss': 0.3114620528437875, 'l_sp': 0.025215029695325276, 'l_cc': 0.034285019829191944, 'l_adv': 0.4187470308758996, 'l_rec': 0.0414227501235225}
+Train Results Epoch 114: {'Mult_acc_2': np.float64(0.9042397660818714), 'Mult_acc_3': np.float64(0.9152046783625731), 'Mult_acc_5': np.float64(0.875), 'F1_score': 0.9066637342303403, 'MAE': np.float32(0.08315162), 'Corr': np.float64(0.9734718765976795)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 115: {'loss': 0.300138269635764, 'l_sp': 0.018783805024048143, 'l_cc': 0.03383230841295286, 'l_adv': 0.4124123074791648, 'l_rec': 0.034579949284141716}
+Train Results Epoch 115: {'Mult_acc_2': np.float64(0.9166666666666666), 'Mult_acc_3': np.float64(0.9385964912280702), 'Mult_acc_5': np.float64(0.8991228070175439), 'F1_score': 0.9187295660860602, 'MAE': np.float32(0.07269285), 'Corr': np.float64(0.9806827846173932)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 116: {'loss': 0.31496805223551666, 'l_sp': 0.024259093863127582, 'l_cc': 0.03463494693013755, 'l_adv': 0.4258617718111385, 'l_rec': 0.04020440671592951}
+Train Results Epoch 116: {'Mult_acc_2': np.float64(0.9144736842105263), 'Mult_acc_3': np.float64(0.9437134502923976), 'Mult_acc_5': np.float64(0.9108187134502924), 'F1_score': 0.9165420972296193, 'MAE': np.float32(0.07304641), 'Corr': np.float64(0.9741257385383726)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 117: {'loss': 0.2902654206210917, 'l_sp': 0.015057072868909348, 'l_cc': 0.0350947862660343, 'l_adv': 0.4007597247307951, 'l_rec': 0.03167195474220948}
+Train Results Epoch 117: {'Mult_acc_2': np.float64(0.9122807017543859), 'Mult_acc_3': np.float64(0.9546783625730995), 'Mult_acc_5': np.float64(0.9378654970760234), 'F1_score': 0.9145803676550373, 'MAE': np.float32(0.056703433), 'Corr': np.float64(0.9846274403613875)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 118: {'loss': 0.296944641254165, 'l_sp': 0.02061333052221347, 'l_cc': 0.03338120293549516, 'l_adv': 0.40490792149847205, 'l_rec': 0.033434677784415806}
+Train Results Epoch 118: {'Mult_acc_2': np.float64(0.9203216374269005), 'Mult_acc_3': np.float64(0.952485380116959), 'Mult_acc_5': np.float64(0.9247076023391813), 'F1_score': 0.9222486204959701, 'MAE': np.float32(0.06702526), 'Corr': np.float64(0.9782479923822821)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 119: {'loss': 0.3155406022613699, 'l_sp': 0.02185061319985173, 'l_cc': 0.03342276464470408, 'l_adv': 0.4336437081748789, 'l_rec': 0.03423268347978592}
+Train Results Epoch 119: {'Mult_acc_2': np.float64(0.9159356725146199), 'Mult_acc_3': np.float64(0.9605263157894737), 'Mult_acc_5': np.float64(0.9342105263157895), 'F1_score': 0.9180008017492308, 'MAE': np.float32(0.06594331), 'Corr': np.float64(0.9769647754456271)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 120: {'loss': 0.3166977505792271, 'l_sp': 0.026055407784455878, 'l_cc': 0.033543571745130146, 'l_adv': 0.42857765609567816, 'l_rec': 0.03306525285271081}
+Train Results Epoch 120: {'Mult_acc_2': np.float64(0.9005847953216374), 'Mult_acc_3': np.float64(0.939327485380117), 'Mult_acc_5': np.float64(0.9144736842105263), 'F1_score': 0.903155561430389, 'MAE': np.float32(0.07083219), 'Corr': np.float64(0.972985786159605)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 121: {'loss': 0.29307764768600464, 'l_sp': 0.016434020690873942, 'l_cc': 0.03371574585749344, 'l_adv': 0.4062377620827068, 'l_rec': 0.02556791114197536}
+Train Results Epoch 121: {'Mult_acc_2': np.float64(0.922514619883041), 'Mult_acc_3': np.float64(0.9597953216374269), 'Mult_acc_5': np.float64(0.9312865497076024), 'F1_score': 0.9244616884090567, 'MAE': np.float32(0.06168077), 'Corr': np.float64(0.9828970338995764)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 122: {'loss': 0.2946316728537733, 'l_sp': 0.02146075831048868, 'l_cc': 0.037160235457122326, 'l_adv': 0.39503721350973303, 'l_rec': 0.02704363146966154}
+Train Results Epoch 122: {'Mult_acc_2': np.float64(0.902046783625731), 'Mult_acc_3': np.float64(0.9576023391812866), 'Mult_acc_5': np.float64(0.9305555555555556), 'F1_score': 0.9049946264991062, 'MAE': np.float32(0.061710794), 'Corr': np.float64(0.9788494424900962)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 123: {'loss': 0.3018131676045331, 'l_sp': 0.015293391135690565, 'l_cc': 0.03274229494854808, 'l_adv': 0.4237541231242093, 'l_rec': 0.027992275712842293}
+Train Results Epoch 123: {'Mult_acc_2': np.float64(0.9137426900584795), 'Mult_acc_3': np.float64(0.9605263157894737), 'Mult_acc_5': np.float64(0.9371345029239766), 'F1_score': 0.9160343893588136, 'MAE': np.float32(0.057377253), 'Corr': np.float64(0.9841605411515792)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 124: {'loss': 0.29134826971725986, 'l_sp': 0.016946320268537172, 'l_cc': 0.034941446501761675, 'l_adv': 0.4008029428395358, 'l_rec': 0.024728729601272127}
+Train Results Epoch 124: {'Mult_acc_2': np.float64(0.9173976608187134), 'Mult_acc_3': np.float64(0.9671052631578947), 'Mult_acc_5': np.float64(0.9473684210526315), 'F1_score': 0.9195484773681272, 'MAE': np.float32(0.05679145), 'Corr': np.float64(0.9821327892206592)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 125: {'loss': 0.31739555367014627, 'l_sp': 0.020172884581949223, 'l_cc': 0.03565894795412367, 'l_adv': 0.43646280061114917, 'l_rec': 0.032519172580743376}
+Train Results Epoch 125: {'Mult_acc_2': np.float64(0.9035087719298246), 'Mult_acc_3': np.float64(0.9473684210526315), 'Mult_acc_5': np.float64(0.9181286549707602), 'F1_score': 0.9061711950649299, 'MAE': np.float32(0.06850752), 'Corr': np.float64(0.9790861983338444)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 126: {'loss': 0.30142500319264154, 'l_sp': 0.020974825771356172, 'l_cc': 0.03607395799322562, 'l_adv': 0.40847638926722785, 'l_rec': 0.0289776897565885}
+Train Results Epoch 126: {'Mult_acc_2': np.float64(0.9247076023391813), 'Mult_acc_3': np.float64(0.9517543859649122), 'Mult_acc_5': np.float64(0.9261695906432749), 'F1_score': 0.9262837939607949, 'MAE': np.float32(0.06424406), 'Corr': np.float64(0.978362133247772)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 127: {'loss': 0.3097238554195924, 'l_sp': 0.02039267831820656, 'l_cc': 0.03682171858169816, 'l_adv': 0.41997762566263025, 'l_rec': 0.042050411670722744}
+Train Results Epoch 127: {'Mult_acc_2': np.float64(0.9093567251461988), 'Mult_acc_3': np.float64(0.939327485380117), 'Mult_acc_5': np.float64(0.9152046783625731), 'F1_score': 0.9117649515296007, 'MAE': np.float32(0.06500397), 'Corr': np.float64(0.978857651335235)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 128: {'loss': 0.3178027624433691, 'l_sp': 0.019437920905395666, 'l_cc': 0.035989725750617006, 'l_adv': 0.43644458190961316, 'l_rec': 0.04107333135537126}
+Train Results Epoch 128: {'Mult_acc_2': np.float64(0.9152046783625731), 'Mult_acc_3': np.float64(0.956140350877193), 'Mult_acc_5': np.float64(0.929093567251462), 'F1_score': 0.9174575353018846, 'MAE': np.float32(0.059409548), 'Corr': np.float64(0.9800202479789812)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 129: {'loss': 0.3116782863031734, 'l_sp': 0.01855909659273245, 'l_cc': 0.04060729444873604, 'l_adv': 0.4219772680239244, 'l_rec': 0.0338625255972147}
+Train Results Epoch 129: {'Mult_acc_2': np.float64(0.9173976608187134), 'Mult_acc_3': np.float64(0.9437134502923976), 'Mult_acc_5': np.float64(0.9130116959064327), 'F1_score': 0.9194268747622877, 'MAE': np.float32(0.07048757), 'Corr': np.float64(0.981136275551895)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 130: {'loss': 0.30059298195622186, 'l_sp': 0.021841859508475118, 'l_cc': 0.04041370004415512, 'l_adv': 0.39952114630829205, 'l_rec': 0.026660984636030415}
+Train Results Epoch 130: {'Mult_acc_2': np.float64(0.9122807017543859), 'Mult_acc_3': np.float64(0.9364035087719298), 'Mult_acc_5': np.float64(0.9064327485380117), 'F1_score': 0.9145172129600144, 'MAE': np.float32(0.0713629), 'Corr': np.float64(0.9771370866752666)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 131: {'loss': 0.3163484876806086, 'l_sp': 0.021738502196967602, 'l_cc': 0.040564170022579754, 'l_adv': 0.4256413240324367, 'l_rec': 0.02717435584318909}
+Train Results Epoch 131: {'Mult_acc_2': np.float64(0.902046783625731), 'Mult_acc_3': np.float64(0.939327485380117), 'Mult_acc_5': np.float64(0.908625730994152), 'F1_score': 0.9048452495930406, 'MAE': np.float32(0.06894503), 'Corr': np.float64(0.9769968908218007)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 132: {'loss': 0.3159955834800547, 'l_sp': 0.026403804457831113, 'l_cc': 0.039871620437638325, 'l_adv': 0.4182102395729585, 'l_rec': 0.02781164167787541}
+Train Results Epoch 132: {'Mult_acc_2': np.float64(0.9159356725146199), 'Mult_acc_3': np.float64(0.9510233918128655), 'Mult_acc_5': np.float64(0.9276315789473685), 'F1_score': 0.9180635834846499, 'MAE': np.float32(0.06539064), 'Corr': np.float64(0.9761146996016655)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 133: {'loss': 0.292177751660347, 'l_sp': 0.016775731441818854, 'l_cc': 0.039429688741537655, 'l_adv': 0.3963371921669353, 'l_rec': 0.02112980948930437}
+Train Results Epoch 133: {'Mult_acc_2': np.float64(0.9057017543859649), 'Mult_acc_3': np.float64(0.9466374269005848), 'Mult_acc_5': np.float64(0.9159356725146199), 'F1_score': 0.9084692146158804, 'MAE': np.float32(0.06683962), 'Corr': np.float64(0.9839406608194166)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 134: {'loss': 0.3008720969611948, 'l_sp': 0.02173229710156606, 'l_cc': 0.037772380831566726, 'l_adv': 0.4041550647128712, 'l_rec': 0.02651606381616809}
+Train Results Epoch 134: {'Mult_acc_2': np.float64(0.9298245614035088), 'Mult_acc_3': np.float64(0.9378654970760234), 'Mult_acc_5': np.float64(0.9027777777777778), 'F1_score': 0.9313086208972211, 'MAE': np.float32(0.07341721), 'Corr': np.float64(0.9782071680988753)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 135: {'loss': 0.3202937204729427, 'l_sp': 0.02590595132840628, 'l_cc': 0.03842499479651451, 'l_adv': 0.42863559451970185, 'l_rec': 0.026238981761376966}
+Train Results Epoch 135: {'Mult_acc_2': np.float64(0.9005847953216374), 'Mult_acc_3': np.float64(0.9320175438596491), 'Mult_acc_5': np.float64(0.9013157894736842), 'F1_score': 0.9033278979456855, 'MAE': np.float32(0.075532526), 'Corr': np.float64(0.9740246636336686)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 136: {'loss': 0.31221858208829706, 'l_sp': 0.022667573870752345, 'l_cc': 0.036595533855936745, 'l_adv': 0.423125378110192, 'l_rec': 0.02739796033975753}
+Train Results Epoch 136: {'Mult_acc_2': np.float64(0.9013157894736842), 'Mult_acc_3': np.float64(0.9305555555555556), 'Mult_acc_5': np.float64(0.9027777777777778), 'F1_score': 0.9039203467834157, 'MAE': np.float32(0.07117727), 'Corr': np.float64(0.9770421180824935)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 137: {'loss': 0.304397851228714, 'l_sp': 0.02451146163300357, 'l_cc': 0.03414520553567193, 'l_adv': 0.4109978675842285, 'l_rec': 0.025569770485162735}
+Train Results Epoch 137: {'Mult_acc_2': np.float64(0.8932748538011696), 'Mult_acc_3': np.float64(0.9254385964912281), 'Mult_acc_5': np.float64(0.8991228070175439), 'F1_score': 0.896289726745058, 'MAE': np.float32(0.075554155), 'Corr': np.float64(0.974979114903877)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 138: {'loss': 0.3122608810663223, 'l_sp': 0.030233443757011133, 'l_cc': 0.0331250104883855, 'l_adv': 0.41620971397920087, 'l_rec': 0.024890911765396595}
+Train Results Epoch 138: {'Mult_acc_2': np.float64(0.8918128654970761), 'Mult_acc_3': np.float64(0.918859649122807), 'Mult_acc_5': np.float64(0.8793859649122807), 'F1_score': 0.8947616412159066, 'MAE': np.float32(0.08626279), 'Corr': np.float64(0.9689054975995486)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 139: {'loss': 0.3019682480530305, 'l_sp': 0.026469547851857813, 'l_cc': 0.03513271403922276, 'l_adv': 0.402138582684777, 'l_rec': 0.02596105110238899}
+Train Results Epoch 139: {'Mult_acc_2': np.float64(0.89546783625731), 'Mult_acc_3': np.float64(0.922514619883041), 'Mult_acc_5': np.float64(0.8874269005847953), 'F1_score': 0.8982992166111373, 'MAE': np.float32(0.0787348), 'Corr': np.float64(0.9734412729617041)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 140: {'loss': 0.30108922855420545, 'l_sp': 0.023510024036196144, 'l_cc': 0.03583444379778071, 'l_adv': 0.40475490960207855, 'l_rec': 0.024752468294040722}
+Train Results Epoch 140: {'Mult_acc_2': np.float64(0.8991228070175439), 'Mult_acc_3': np.float64(0.9181286549707602), 'Mult_acc_5': np.float64(0.875), 'F1_score': 0.9018723411337506, 'MAE': np.float32(0.08378951), 'Corr': np.float64(0.9765475739662928)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 141: {'loss': 0.2881512079726566, 'l_sp': 0.022348030883056872, 'l_cc': 0.03362098649482836, 'l_adv': 0.38883283869786694, 'l_rec': 0.022445737511258234}
+Train Results Epoch 141: {'Mult_acc_2': np.float64(0.902046783625731), 'Mult_acc_3': np.float64(0.9254385964912281), 'Mult_acc_5': np.float64(0.8903508771929824), 'F1_score': 0.9046831802085046, 'MAE': np.float32(0.078062825), 'Corr': np.float64(0.977661185893801)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 142: {'loss': 0.3140408532185988, 'l_sp': 0.040323937142437156, 'l_cc': 0.03258809709752148, 'l_adv': 0.40262585471976886, 'l_rec': 0.028121069581671196}
+Train Results Epoch 142: {'Mult_acc_2': np.float64(0.9078947368421053), 'Mult_acc_3': np.float64(0.9342105263157895), 'Mult_acc_5': np.float64(0.9064327485380117), 'F1_score': 0.9101044998091629, 'MAE': np.float32(0.07741401), 'Corr': np.float64(0.9691430688293518)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 143: {'loss': 0.317131833596663, 'l_sp': 0.029556584269316358, 'l_cc': 0.032049016265029255, 'l_adv': 0.42643414302305743, 'l_rec': 0.028706370344893498}
+Train Results Epoch 143: {'Mult_acc_2': np.float64(0.9108187134502924), 'Mult_acc_3': np.float64(0.9334795321637427), 'Mult_acc_5': np.float64(0.8976608187134503), 'F1_score': 0.9127796427159324, 'MAE': np.float32(0.080014236), 'Corr': np.float64(0.9705568434989552)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 144: {'loss': 0.28875511478294025, 'l_sp': 0.022525649835270913, 'l_cc': 0.032373334958472035, 'l_adv': 0.39114744690331543, 'l_rec': 0.02404985966330225}
+Train Results Epoch 144: {'Mult_acc_2': np.float64(0.9108187134502924), 'Mult_acc_3': np.float64(0.9342105263157895), 'Mult_acc_5': np.float64(0.8976608187134503), 'F1_score': 0.9129583252120466, 'MAE': np.float32(0.0710445), 'Corr': np.float64(0.9782348037064823)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 145: {'loss': 0.31466127322478726, 'l_sp': 0.028741149104792963, 'l_cc': 0.03316217034377835, 'l_adv': 0.42182695730166003, 'l_rec': 0.02977988039228049}
+Train Results Epoch 145: {'Mult_acc_2': np.float64(0.9027777777777778), 'Mult_acc_3': np.float64(0.935672514619883), 'Mult_acc_5': np.float64(0.8910818713450293), 'F1_score': 0.9055084353143908, 'MAE': np.float32(0.08217431), 'Corr': np.float64(0.9705882335659947)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 146: {'loss': 0.28423829173499887, 'l_sp': 0.018280536761846055, 'l_cc': 0.03196678005836227, 'l_adv': 0.3912257335402749, 'l_rec': 0.024522066962989895}
+Train Results Epoch 146: {'Mult_acc_2': np.float64(0.9122807017543859), 'Mult_acc_3': np.float64(0.956140350877193), 'Mult_acc_5': np.float64(0.929093567251462), 'F1_score': 0.9145490247915194, 'MAE': np.float32(0.06280139), 'Corr': np.float64(0.9815408486781988)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 147: {'loss': 0.29456435956738214, 'l_sp': 0.019513203635473143, 'l_cc': 0.030492230233821003, 'l_adv': 0.40830049189654266, 'l_rec': 0.02627842788669196}
+Train Results Epoch 147: {'Mult_acc_2': np.float64(0.9071637426900585), 'Mult_acc_3': np.float64(0.9510233918128655), 'Mult_acc_5': np.float64(0.9247076023391813), 'F1_score': 0.9096463862677975, 'MAE': np.float32(0.0646577), 'Corr': np.float64(0.9807627828155079)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 148: {'loss': 0.29150201786648144, 'l_sp': 0.019692014003257183, 'l_cc': 0.03233259763907303, 'l_adv': 0.4001927131956274, 'l_rec': 0.02595030719583685}
+Train Results Epoch 148: {'Mult_acc_2': np.float64(0.9100877192982456), 'Mult_acc_3': np.float64(0.9554093567251462), 'Mult_acc_5': np.float64(0.929093567251462), 'F1_score': 0.9124288735953953, 'MAE': np.float32(0.061548557), 'Corr': np.float64(0.9801000722493226)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 149: {'loss': 0.3087469684806737, 'l_sp': 0.030278969661925326, 'l_cc': 0.031963053667409855, 'l_adv': 0.4110629450191151, 'l_rec': 0.03063474887643348}
+Train Results Epoch 149: {'Mult_acc_2': np.float64(0.918859649122807), 'Mult_acc_3': np.float64(0.9568713450292398), 'Mult_acc_5': np.float64(0.9364035087719298), 'F1_score': 0.9208219896793824, 'MAE': np.float32(0.06290641), 'Corr': np.float64(0.9745612425863481)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 150: {'loss': 0.2762265747243708, 'l_sp': 0.016249057942662726, 'l_cc': 0.03238663788546215, 'l_adv': 0.3805604170669209, 'l_rec': 0.024932820519263096}
+Train Results Epoch 150: {'Mult_acc_2': np.float64(0.9173976608187134), 'Mult_acc_3': np.float64(0.9568713450292398), 'Mult_acc_5': np.float64(0.935672514619883), 'F1_score': 0.9194579427464322, 'MAE': np.float32(0.060211495), 'Corr': np.float64(0.9838667286219458)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 151: {'loss': 0.3080855587666685, 'l_sp': 0.025381461981768636, 'l_cc': 0.03403569266877391, 'l_adv': 0.41493409330194647, 'l_rec': 0.031115093183788387}
+Train Results Epoch 151: {'Mult_acc_2': np.float64(0.9159356725146199), 'Mult_acc_3': np.float64(0.9576023391812866), 'Mult_acc_5': np.float64(0.9276315789473685), 'F1_score': 0.917968728046207, 'MAE': np.float32(0.07008317), 'Corr': np.float64(0.9733354896471036)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 152: {'loss': 0.2842457260597836, 'l_sp': 0.016033889101394874, 'l_cc': 0.03171174016527154, 'l_adv': 0.3950768045403741, 'l_rec': 0.026251775381917305}
+Train Results Epoch 152: {'Mult_acc_2': np.float64(0.908625730994152), 'Mult_acc_3': np.float64(0.9641812865497076), 'Mult_acc_5': np.float64(0.9422514619883041), 'F1_score': 0.9110692778226351, 'MAE': np.float32(0.055774286), 'Corr': np.float64(0.9834674341650107)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 153: {'loss': 0.3096263584765521, 'l_sp': 0.027211407897993922, 'l_cc': 0.03265577944164926, 'l_adv': 0.4168806888840415, 'l_rec': 0.02896326949650591}
+Train Results Epoch 153: {'Mult_acc_2': np.float64(0.9005847953216374), 'Mult_acc_3': np.float64(0.9451754385964912), 'Mult_acc_5': np.float64(0.9181286549707602), 'F1_score': 0.9033278979456855, 'MAE': np.float32(0.07018946), 'Corr': np.float64(0.9711014575151322)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 154: {'loss': 0.31329591843214905, 'l_sp': 0.028228825561448255, 'l_cc': 0.030165034176951103, 'l_adv': 0.42530633915554394, 'l_rec': 0.027347480454905468}
+Train Results Epoch 154: {'Mult_acc_2': np.float64(0.9122807017543859), 'Mult_acc_3': np.float64(0.9437134502923976), 'Mult_acc_5': np.float64(0.908625730994152), 'F1_score': 0.9142812379131655, 'MAE': np.float32(0.07224152), 'Corr': np.float64(0.9719459804980635)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 155: {'loss': 0.31543791497295554, 'l_sp': 0.03223715982907875, 'l_cc': 0.02827991083772345, 'l_adv': 0.42510054870085284, 'l_rec': 0.026884950189427895}
+Train Results Epoch 155: {'Mult_acc_2': np.float64(0.9108187134502924), 'Mult_acc_3': np.float64(0.9261695906432749), 'Mult_acc_5': np.float64(0.8845029239766082), 'F1_score': 0.9130263777412224, 'MAE': np.float32(0.08651271), 'Corr': np.float64(0.9657611348722942)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 156: {'loss': 0.30441106991334393, 'l_sp': 0.022528099615804174, 'l_cc': 0.025855673604052175, 'l_adv': 0.42617893489924347, 'l_rec': 0.02905493009496819}
+Train Results Epoch 156: {'Mult_acc_2': np.float64(0.9137426900584795), 'Mult_acc_3': np.float64(0.9429824561403509), 'Mult_acc_5': np.float64(0.9042397660818714), 'F1_score': 0.915973207711661, 'MAE': np.float32(0.070772626), 'Corr': np.float64(0.9764306926110379)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 157: {'loss': 0.31050860475410114, 'l_sp': 0.02732657844370062, 'l_cc': 0.025169620226899333, 'l_adv': 0.42953927544030274, 'l_rec': 0.02805792057717388}
+Train Results Epoch 157: {'Mult_acc_2': np.float64(0.9210526315789473), 'Mult_acc_3': np.float64(0.9349415204678363), 'Mult_acc_5': np.float64(0.89546783625731), 'F1_score': 0.9228531141218489, 'MAE': np.float32(0.075097606), 'Corr': np.float64(0.9722406509844218)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 158: {'loss': 0.2867124771529978, 'l_sp': 0.017412166090004823, 'l_cc': 0.025351983156393875, 'l_adv': 0.40703545781699096, 'l_rec': 0.02262236825613813}
+Train Results Epoch 158: {'Mult_acc_2': np.float64(0.9269005847953217), 'Mult_acc_3': np.float64(0.9554093567251462), 'Mult_acc_5': np.float64(0.9283625730994152), 'F1_score': 0.9285676982609713, 'MAE': np.float32(0.059536763), 'Corr': np.float64(0.9822239667393186)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 159: {'loss': 0.30810356817462226, 'l_sp': 0.02685333778870038, 'l_cc': 0.02549454557116736, 'l_adv': 0.4260723319920627, 'l_rec': 0.026617219163612885}
+Train Results Epoch 159: {'Mult_acc_2': np.float64(0.9122807017543859), 'Mult_acc_3': np.float64(0.939327485380117), 'Mult_acc_5': np.float64(0.9064327485380117), 'F1_score': 0.9145803676550373, 'MAE': np.float32(0.07184052), 'Corr': np.float64(0.9720636144929505)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 160: {'loss': 0.2959476655179804, 'l_sp': 0.02144662788222459, 'l_cc': 0.02476666977798397, 'l_adv': 0.415995100682432, 'l_rec': 0.02613961493427103}
+Train Results Epoch 160: {'Mult_acc_2': np.float64(0.9144736842105263), 'Mult_acc_3': np.float64(0.9422514619883041), 'Mult_acc_5': np.float64(0.8998538011695907), 'F1_score': 0.9167608440419867, 'MAE': np.float32(0.07146072), 'Corr': np.float64(0.9787313548632532)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 161: {'loss': 0.28167631002989685, 'l_sp': 0.01868118419819935, 'l_cc': 0.025564847895028917, 'l_adv': 0.39616080170327966, 'l_rec': 0.02290268475189805}
+Train Results Epoch 161: {'Mult_acc_2': np.float64(0.9181286549707602), 'Mult_acc_3': np.float64(0.9605263157894737), 'Mult_acc_5': np.float64(0.9342105263157895), 'F1_score': 0.9202160654293468, 'MAE': np.float32(0.06033406), 'Corr': np.float64(0.9819819172616072)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 162: {'loss': 0.27677858688614587, 'l_sp': 0.016706003235991706, 'l_cc': 0.02405239548534155, 'l_adv': 0.3937919180501591, 'l_rec': 0.021502705121582203}
+Train Results Epoch 162: {'Mult_acc_2': np.float64(0.9173976608187134), 'Mult_acc_3': np.float64(0.9605263157894737), 'Mult_acc_5': np.float64(0.9371345029239766), 'F1_score': 0.9194885646414387, 'MAE': np.float32(0.05641779), 'Corr': np.float64(0.9828038798853196)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 163: {'loss': 0.29793348569761624, 'l_sp': 0.02220569340385158, 'l_cc': 0.024412003853781658, 'l_adv': 0.41868568144061347, 'l_rec': 0.025455723770640114}
+Train Results Epoch 163: {'Mult_acc_2': np.float64(0.9122807017543859), 'Mult_acc_3': np.float64(0.9612573099415205), 'Mult_acc_5': np.float64(0.9334795321637427), 'F1_score': 0.9146112434157427, 'MAE': np.float32(0.059918676), 'Corr': np.float64(0.9786685760651461)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 164: {'loss': 0.28298401832580566, 'l_sp': 0.016772653886371038, 'l_cc': 0.025250375524840572, 'l_adv': 0.40214578400958667, 'l_rec': 0.021985472179949284}
+Train Results Epoch 164: {'Mult_acc_2': np.float64(0.908625730994152), 'Mult_acc_3': np.float64(0.956140350877193), 'Mult_acc_5': np.float64(0.935672514619883), 'F1_score': 0.9111007138209242, 'MAE': np.float32(0.05536515), 'Corr': np.float64(0.9841533037581768)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 165: {'loss': 0.2901484390551394, 'l_sp': 0.020801629468967967, 'l_cc': 0.024778864727440206, 'l_adv': 0.4074200540781021, 'l_rec': 0.025937959636476906}
+Train Results Epoch 165: {'Mult_acc_2': np.float64(0.9166666666666666), 'Mult_acc_3': np.float64(0.9576023391812866), 'Mult_acc_5': np.float64(0.9327485380116959), 'F1_score': 0.9187606837606836, 'MAE': np.float32(0.05983353), 'Corr': np.float64(0.978082854545117)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 166: {'loss': 0.30845803496512497, 'l_sp': 0.02665947808418423, 'l_cc': 0.024996614845638924, 'l_adv': 0.4275223951448094, 'l_rec': 0.027881555174562065}
+Train Results Epoch 166: {'Mult_acc_2': np.float64(0.9203216374269005), 'Mult_acc_3': np.float64(0.9539473684210527), 'Mult_acc_5': np.float64(0.9276315789473685), 'F1_score': 0.9222486204959701, 'MAE': np.float32(0.06519692), 'Corr': np.float64(0.9718123858268072)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 167: {'loss': 0.2908350385048173, 'l_sp': 0.01855574034958739, 'l_cc': 0.02303370228037238, 'l_adv': 0.4155305190519853, 'l_rec': 0.022306437223133715}
+Train Results Epoch 167: {'Mult_acc_2': np.float64(0.9137426900584795), 'Mult_acc_3': np.float64(0.9576023391812866), 'Mult_acc_5': np.float64(0.9407894736842105), 'F1_score': 0.9159101814364972, 'MAE': np.float32(0.056048397), 'Corr': np.float64(0.9804930488051795)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 168: {'loss': 0.2902811115438288, 'l_sp': 0.01604305576025085, 'l_cc': 0.02387263752858747, 'l_adv': 0.41731887378475885, 'l_rec': 0.023613498715514488}
+Train Results Epoch 168: {'Mult_acc_2': np.float64(0.9247076023391813), 'Mult_acc_3': np.float64(0.9649122807017544), 'Mult_acc_5': np.float64(0.9444444444444444), 'F1_score': 0.9264398657136024, 'MAE': np.float32(0.05013898), 'Corr': np.float64(0.9833218802510455)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 169: {'loss': 0.2845712277022275, 'l_sp': 0.018166545270518822, 'l_cc': 0.023238918151367794, 'l_adv': 0.4056284048340537, 'l_rec': 0.02112606510689313}
+Train Results Epoch 169: {'Mult_acc_2': np.float64(0.9152046783625731), 'Mult_acc_3': np.float64(0.9634502923976608), 'Mult_acc_5': np.float64(0.9415204678362573), 'F1_score': 0.9173354325985906, 'MAE': np.float32(0.053841535), 'Corr': np.float64(0.9809869405210003)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 170: {'loss': 0.29363043877211487, 'l_sp': 0.023412322800140828, 'l_cc': 0.024533489422703333, 'l_adv': 0.4098036153749986, 'l_rec': 0.022557981693270533}
+Train Results Epoch 170: {'Mult_acc_2': np.float64(0.9108187134502924), 'Mult_acc_3': np.float64(0.9605263157894737), 'Mult_acc_5': np.float64(0.939327485380117), 'F1_score': 0.9131567071159545, 'MAE': np.float32(0.054761115), 'Corr': np.float64(0.9769372672165701)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 171: {'loss': 0.2858931591564959, 'l_sp': 0.01809117253023115, 'l_cc': 0.024833201854066414, 'l_adv': 0.4052543193101883, 'l_rec': 0.02299504718658599}
+Train Results Epoch 171: {'Mult_acc_2': np.float64(0.9122807017543859), 'Mult_acc_3': np.float64(0.9656432748538012), 'Mult_acc_5': np.float64(0.9444444444444444), 'F1_score': 0.9146416539180637, 'MAE': np.float32(0.058257066), 'Corr': np.float64(0.98115122089852)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 172: {'loss': 0.2979757237163457, 'l_sp': 0.01852055531079796, 'l_cc': 0.02436479964208874, 'l_adv': 0.42539098858833313, 'l_rec': 0.02292240800505335}
+Train Results Epoch 172: {'Mult_acc_2': np.float64(0.9137426900584795), 'Mult_acc_3': np.float64(0.9590643274853801), 'Mult_acc_5': np.float64(0.939327485380117), 'F1_score': 0.915973207711661, 'MAE': np.float32(0.054497637), 'Corr': np.float64(0.9811565252384862)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 173: {'loss': 0.2718676484443925, 'l_sp': 0.013713262573053891, 'l_cc': 0.023136626251719215, 'l_adv': 0.39233873784542084, 'l_rec': 0.019281773827970028}
+Train Results Epoch 173: {'Mult_acc_2': np.float64(0.9137426900584795), 'Mult_acc_3': np.float64(0.9671052631578947), 'Mult_acc_5': np.float64(0.9510233918128655), 'F1_score': 0.9160642930194295, 'MAE': np.float32(0.046276197), 'Corr': np.float64(0.9857699946040063)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 174: {'loss': 0.28340545906261966, 'l_sp': 0.015995485813949595, 'l_cc': 0.02330612006004561, 'l_adv': 0.40704797208309174, 'l_rec': 0.022056793413040312}
+Train Results Epoch 174: {'Mult_acc_2': np.float64(0.9152046783625731), 'Mult_acc_3': np.float64(0.9619883040935673), 'Mult_acc_5': np.float64(0.9444444444444444), 'F1_score': 0.9173666391946806, 'MAE': np.float32(0.05156307), 'Corr': np.float64(0.9835306850120861)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 175: {'loss': 0.27237966047091916, 'l_sp': 0.017115233243781735, 'l_cc': 0.023876930417662316, 'l_adv': 0.38603985715996136, 'l_rec': 0.021512650800022213}
+Train Results Epoch 175: {'Mult_acc_2': np.float64(0.9064327485380117), 'Mult_acc_3': np.float64(0.966374269005848), 'Mult_acc_5': np.float64(0.9502923976608187), 'F1_score': 0.9090454528125467, 'MAE': np.float32(0.051775225), 'Corr': np.float64(0.9822828276272194)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 176: {'loss': 0.2708072791045362, 'l_sp': 0.015125038620846515, 'l_cc': 0.02348690467293967, 'l_adv': 0.3877194997939197, 'l_rec': 0.019123169127851725}
+Train Results Epoch 176: {'Mult_acc_2': np.float64(0.9239766081871345), 'Mult_acc_3': np.float64(0.9685672514619883), 'Mult_acc_5': np.float64(0.956140350877193), 'F1_score': 0.9257104061914102, 'MAE': np.float32(0.046024963), 'Corr': np.float64(0.9848060534704773)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 177: {'loss': 0.28315507010980084, 'l_sp': 0.01700839448974214, 'l_cc': 0.02306364696811546, 'l_adv': 0.4055776298046112, 'l_rec': 0.020428095309233122}
+Train Results Epoch 177: {'Mult_acc_2': np.float64(0.9071637426900585), 'Mult_acc_3': np.float64(0.9649122807017544), 'Mult_acc_5': np.float64(0.9437134502923976), 'F1_score': 0.9097097747051611, 'MAE': np.float32(0.052803576), 'Corr': np.float64(0.9825244992723329)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 178: {'loss': 0.2848112237724391, 'l_sp': 0.022011461307887326, 'l_cc': 0.023852347713810475, 'l_adv': 0.3982881117950786, 'l_rec': 0.02359770725227215}
+Train Results Epoch 178: {'Mult_acc_2': np.float64(0.9181286549707602), 'Mult_acc_3': np.float64(0.9641812865497076), 'Mult_acc_5': np.float64(0.9466374269005848), 'F1_score': 0.9200928887192558, 'MAE': np.float32(0.05682043), 'Corr': np.float64(0.9783294635850271)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 179: {'loss': 0.2859676602211865, 'l_sp': 0.01786317224402658, 'l_cc': 0.02332159453494982, 'l_adv': 0.4082892062989148, 'l_rec': 0.02141517891802571}
+Train Results Epoch 179: {'Mult_acc_2': np.float64(0.9217836257309941), 'Mult_acc_3': np.float64(0.9678362573099415), 'Mult_acc_5': np.float64(0.9502923976608187), 'F1_score': 0.9237050938014584, 'MAE': np.float32(0.049743988), 'Corr': np.float64(0.9821636778154977)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 180: {'loss': 0.28862388228828256, 'l_sp': 0.01668015536217188, 'l_cc': 0.023112045939673077, 'l_adv': 0.41482058573852887, 'l_rec': 0.02250529338859699}
+Train Results Epoch 180: {'Mult_acc_2': np.float64(0.9261695906432749), 'Mult_acc_3': np.float64(0.9685672514619883), 'Mult_acc_5': np.float64(0.9502923976608187), 'F1_score': 0.9278682178356682, 'MAE': np.float32(0.05026973), 'Corr': np.float64(0.9824421277751927)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 181: {'loss': 0.28636411103335296, 'l_sp': 0.01675256654429673, 'l_cc': 0.023704820143228226, 'l_adv': 0.4099082337184386, 'l_rec': 0.02332251256501133}
+Train Results Epoch 181: {'Mult_acc_2': np.float64(0.9152046783625731), 'Mult_acc_3': np.float64(0.9707602339181286), 'Mult_acc_5': np.float64(0.9488304093567251), 'F1_score': 0.9173354325985906, 'MAE': np.float32(0.05111546), 'Corr': np.float64(0.9827354608973068)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 182: {'loss': 0.2730997150594538, 'l_sp': 0.013484954495321621, 'l_cc': 0.02368396609513597, 'l_adv': 0.39396342499689624, 'l_rec': 0.01921123050322587}
+Train Results Epoch 182: {'Mult_acc_2': np.float64(0.9298245614035088), 'Mult_acc_3': np.float64(0.9773391812865497), 'Mult_acc_5': np.float64(0.9619883040935673), 'F1_score': 0.9314249903305324, 'MAE': np.float32(0.043876544), 'Corr': np.float64(0.9864009404945742)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 183: {'loss': 0.28917692737145856, 'l_sp': 0.019153780102814464, 'l_cc': 0.023526484781706877, 'l_adv': 0.4112182611768896, 'l_rec': 0.021183472719382156}
+Train Results Epoch 183: {'Mult_acc_2': np.float64(0.918859649122807), 'Mult_acc_3': np.float64(0.9722222222222222), 'Mult_acc_5': np.float64(0.9554093567251462), 'F1_score': 0.9208529477753447, 'MAE': np.float32(0.04974981), 'Corr': np.float64(0.9799723952252589)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 184: {'loss': 0.2868824899196625, 'l_sp': 0.01770472754089331, 'l_cc': 0.0230219911953265, 'l_adv': 0.41060002419081604, 'l_rec': 0.020979460709812967}
+Train Results Epoch 184: {'Mult_acc_2': np.float64(0.918859649122807), 'Mult_acc_3': np.float64(0.9722222222222222), 'Mult_acc_5': np.float64(0.9495614035087719), 'F1_score': 0.9208834658836635, 'MAE': np.float32(0.05120633), 'Corr': np.float64(0.982083308416969)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 185: {'loss': 0.27321105179461563, 'l_sp': 0.014792865173975852, 'l_cc': 0.023873696273023434, 'l_adv': 0.39160736447030847, 'l_rec': 0.01967433061112057}
+Train Results Epoch 185: {'Mult_acc_2': np.float64(0.922514619883041), 'Mult_acc_3': np.float64(0.97953216374269), 'Mult_acc_5': np.float64(0.9678362573099415), 'F1_score': 0.9244034011432789, 'MAE': np.float32(0.046599537), 'Corr': np.float64(0.9850254318645916)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 186: {'loss': 0.28845787183804944, 'l_sp': 0.018599928917617282, 'l_cc': 0.02354073930870403, 'l_adv': 0.41035243597897614, 'l_rec': 0.02459808015687899}
+Train Results Epoch 186: {'Mult_acc_2': np.float64(0.9137426900584795), 'Mult_acc_3': np.float64(0.9671052631578947), 'Mult_acc_5': np.float64(0.9444444444444444), 'F1_score': 0.9159101814364972, 'MAE': np.float32(0.054369297), 'Corr': np.float64(0.9802966834595643)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 187: {'loss': 0.27661222964525223, 'l_sp': 0.01692038430006836, 'l_cc': 0.02411679970100522, 'l_adv': 0.3931464810263027, 'l_rec': 0.020988281689245592}
+Train Results Epoch 187: {'Mult_acc_2': np.float64(0.9232456140350878), 'Mult_acc_3': np.float64(0.9751461988304093), 'Mult_acc_5': np.float64(0.9568713450292398), 'F1_score': 0.9251018821291456, 'MAE': np.float32(0.047239564), 'Corr': np.float64(0.982254626783289)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 188: {'loss': 0.27053769677877426, 'l_sp': 0.012850417411589826, 'l_cc': 0.023454713084819643, 'l_adv': 0.39120585403659125, 'l_rec': 0.018545165911994198}
+Train Results Epoch 188: {'Mult_acc_2': np.float64(0.9232456140350878), 'Mult_acc_3': np.float64(0.9751461988304093), 'Mult_acc_5': np.float64(0.9634502923976608), 'F1_score': 0.9250721795233917, 'MAE': np.float32(0.042764835), 'Corr': np.float64(0.9866558304369333)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 189: {'loss': 0.28836465220559726, 'l_sp': 0.023333425792357462, 'l_cc': 0.02512063179165125, 'l_adv': 0.39995845881375397, 'l_rec': 0.024475722743028946}
+Train Results Epoch 189: {'Mult_acc_2': np.float64(0.9115497076023392), 'Mult_acc_3': np.float64(0.9656432748538012), 'Mult_acc_5': np.float64(0.9437134502923976), 'F1_score': 0.9139150609323109, 'MAE': np.float32(0.056085106), 'Corr': np.float64(0.9756091389413363)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 190: {'loss': 0.27565814554691315, 'l_sp': 0.01578021871815012, 'l_cc': 0.023546589411456476, 'l_adv': 0.3944299979643388, 'l_rec': 0.020279846831478855}
+Train Results Epoch 190: {'Mult_acc_2': np.float64(0.9166666666666666), 'Mult_acc_3': np.float64(0.9722222222222222), 'Mult_acc_5': np.float64(0.9554093567251462), 'F1_score': 0.9187295660860602, 'MAE': np.float32(0.04733714), 'Corr': np.float64(0.9845085162997863)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 191: {'loss': 0.2908808494156057, 'l_sp': 0.016397912759037517, 'l_cc': 0.022421692582693966, 'l_adv': 0.41984743692658166, 'l_rec': 0.02394943447275595}
+Train Results Epoch 191: {'Mult_acc_2': np.float64(0.9115497076023392), 'Mult_acc_3': np.float64(0.9714912280701754), 'Mult_acc_5': np.float64(0.956140350877193), 'F1_score': 0.9138209540942726, 'MAE': np.float32(0.048622757), 'Corr': np.float64(0.9828111821095378)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 192: {'loss': 0.29222961447455664, 'l_sp': 0.019551096002528953, 'l_cc': 0.023814277300103145, 'l_adv': 0.4149724976582961, 'l_rec': 0.022621564694087614}
+Train Results Epoch 192: {'Mult_acc_2': np.float64(0.908625730994152), 'Mult_acc_3': np.float64(0.9685672514619883), 'Mult_acc_5': np.float64(0.9539473684210527), 'F1_score': 0.9111621422786467, 'MAE': np.float32(0.048628874), 'Corr': np.float64(0.9798339774465796)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 193: {'loss': 0.27137464623559604, 'l_sp': 0.013566603799435225, 'l_cc': 0.02370835713703524, 'l_adv': 0.3910903659733859, 'l_rec': 0.018162906423888424}
+Train Results Epoch 193: {'Mult_acc_2': np.float64(0.9261695906432749), 'Mult_acc_3': np.float64(0.9758771929824561), 'Mult_acc_5': np.float64(0.9641812865497076), 'F1_score': 0.9278384306712169, 'MAE': np.float32(0.04344065), 'Corr': np.float64(0.9862613145220214)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 194: {'loss': 0.2907560860568827, 'l_sp': 0.019097397209737788, 'l_cc': 0.025124030738052996, 'l_adv': 0.41144289347258484, 'l_rec': 0.021813167894089765}
+Train Results Epoch 194: {'Mult_acc_2': np.float64(0.9195906432748538), 'Mult_acc_3': np.float64(0.9678362573099415), 'Mult_acc_5': np.float64(0.9510233918128655), 'F1_score': 0.9215506992996291, 'MAE': np.float32(0.0512413), 'Corr': np.float64(0.9798467622339005)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 195: {'loss': 0.29564453729174356, 'l_sp': 0.024711173186501997, 'l_cc': 0.025260116100649942, 'l_adv': 0.40885463763367047, 'l_rec': 0.028864638922228056}
+Train Results Epoch 195: {'Mult_acc_2': np.float64(0.9239766081871345), 'Mult_acc_3': np.float64(0.9583333333333334), 'Mult_acc_5': np.float64(0.9349415204678363), 'F1_score': 0.9257408683257652, 'MAE': np.float32(0.060314458), 'Corr': np.float64(0.9745179823506175)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 196: {'loss': 0.2910432829098268, 'l_sp': 0.020634271336761725, 'l_cc': 0.025389236736704002, 'l_adv': 0.40917319330302154, 'l_rec': 0.020547681996090847}
+Train Results Epoch 196: {'Mult_acc_2': np.float64(0.9108187134502924), 'Mult_acc_3': np.float64(0.9758771929824561), 'Mult_acc_5': np.float64(0.9590643274853801), 'F1_score': 0.9131880974726718, 'MAE': np.float32(0.048370495), 'Corr': np.float64(0.9817287495842827)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 197: {'loss': 0.279608970338648, 'l_sp': 0.016343035497067667, 'l_cc': 0.022819282063706356, 'l_adv': 0.4011036509817297, 'l_rec': 0.020663790870457888}
+Train Results Epoch 197: {'Mult_acc_2': np.float64(0.9203216374269005), 'Mult_acc_3': np.float64(0.9758771929824561), 'Mult_acc_5': np.float64(0.9656432748538012), 'F1_score': 0.9222790207884015, 'MAE': np.float32(0.04562396), 'Corr': np.float64(0.9845363172668303)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 198: {'loss': 0.2864254103465514, 'l_sp': 0.01749645329387435, 'l_cc': 0.023952295643870126, 'l_adv': 0.4084229252555154, 'l_rec': 0.023181269368664784}
+Train Results Epoch 198: {'Mult_acc_2': np.float64(0.9232456140350878), 'Mult_acc_3': np.float64(0.9722222222222222), 'Mult_acc_5': np.float64(0.9495614035087719), 'F1_score': 0.9250420572622796, 'MAE': np.float32(0.0505736), 'Corr': np.float64(0.9814697273245827)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 199: {'loss': 0.2906963405284015, 'l_sp': 0.01714081451593136, 'l_cc': 0.02332643394104459, 'l_adv': 0.4172778671438044, 'l_rec': 0.021950065666301685}
+Train Results Epoch 199: {'Mult_acc_2': np.float64(0.9159356725146199), 'Mult_acc_3': np.float64(0.9744152046783626), 'Mult_acc_5': np.float64(0.9554093567251462), 'F1_score': 0.9180635834846499, 'MAE': np.float32(0.049326245), 'Corr': np.float64(0.9819198593935159)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
+Train Loss Epoch 200: {'loss': 0.30092194405469025, 'l_sp': 0.01983583189906891, 'l_cc': 0.022516242355446924, 'l_adv': 0.4308640279553153, 'l_rec': 0.023030670063400812}
+Train Results Epoch 200: {'Mult_acc_2': np.float64(0.9049707602339181), 'Mult_acc_3': np.float64(0.9692982456140351), 'Mult_acc_5': np.float64(0.9546783625730995), 'F1_score': 0.907495513700388, 'MAE': np.float32(0.048879936), 'Corr': np.float64(0.9819588386375054)}
+Current Best Valid Results: {'Mult_acc_2': np.float64(0.6951754385964912), 'Mult_acc_3': np.float64(0.543859649122807), 'Mult_acc_5': np.float64(0.2807017543859649), 'F1_score': 0.5701697646444702, 'MAE': np.float32(0.59134877), 'Corr': np.float64(0.1912206826744873)}
+Current Best Test Results: {'Mult_acc_2': np.float64(0.7045951859956237), 'Mult_acc_3': np.float64(0.5470459518599562), 'Mult_acc_5': np.float64(0.3304157549234136), 'F1_score': 0.6000288532724708, 'MAE': np.float32(0.56898504), 'Corr': np.float64(0.2508773330505734)}
+
