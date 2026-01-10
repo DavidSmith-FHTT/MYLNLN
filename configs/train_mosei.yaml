@@ -18,12 +18,13 @@ base:
 
 dataset:
   datasetName: mosei
-  dataPath: /data2/cts/MSA-Datasets/CMU-MOSEI/Processed/unaligned_50.pkl
-   
+#  dataPath: /data2/cts/MSA-Datasets/CMU-MOSEI/Processed/unaligned_50.pkl
+  dataPath: /home/ningwang/SSD1T/cts/MMSA/MSA-Datasets/CMU-MOSEI/Processed/unaligned_50.pkl
 
 model:    
   feature_extractor:
-    bert_pretrained: '/data2/cts/pretrained_berts/bert-base-uncased'
+#    bert_pretrained: '/data2/cts/pretrained_berts/bert-base-uncased'
+    bert_pretrained: '/home/ningwang/SSD1T/cts/MMSA/pretrained_berts/bert-base-uncased'
     input_length: [50, 500, 500] # language, video, audio
     token_length: [8, 8, 8] # language, video, audio
     heads: 8

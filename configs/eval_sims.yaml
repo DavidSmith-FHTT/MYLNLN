@@ -9,12 +9,13 @@ base:
 
 dataset:
   datasetName: sims
-  dataPath: /data2/cts/MSA-Datasets/CH-SIMS/Processed/unaligned_39.pkl
-  
+#  dataPath: /data2/cts/MSA-Datasets/CH-SIMS/Processed/unaligned_39.pkl
+  dataPath: /home/ningwang/SSD1T/cts/MMSA/MSA-Datasets/CH-SIMS/Processed/unaligned_39.pkl
 
 model:    
   feature_extractor:
-    bert_pretrained: '/data2/cts/pretrained_berts/bert-base-chinese'
+#    bert_pretrained: '/data2/cts/pretrained_berts/bert-base-chinese'
+    bert_pretrained: '/home/ningwang/SSD1T/cts/MMSA/pretrained_berts/bert-base-chinese'
     input_length: [39, 55, 400] # language, video, audio
     token_length: [8, 8, 8] # language, video, audio
     heads: 8
