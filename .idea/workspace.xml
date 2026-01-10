@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d982144b-6386-46ef-b6a6-fbd3722ce10f" name="Changes" comment="first commit">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d982144b-6386-46ef-b6a6-fbd3722ce10f" name="Changes" comment="new commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/eval_mosei.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_mosei.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/eval_mosi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_mosi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/eval_sims.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/eval_sims.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_mosei.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_mosei.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_mosi.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_mosi.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_sims.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_sims.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robust_evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/robust_evaluation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/train.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +28,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.train.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
     "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
@@ -73,7 +67,7 @@
       <workItem from="1767942819460" duration="660000" />
       <workItem from="1767943521919" duration="3076000" />
       <workItem from="1767946696230" duration="7684000" />
-      <workItem from="1767968490719" duration="5135000" />
+      <workItem from="1767968490719" duration="9538000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -115,7 +109,23 @@
       <option name="project" value="LOCAL" />
       <updated>1767953027935</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new commit">
+      <option name="closed" value="true" />
+      <created>1768020070582</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1768020070582</updated>
+    </task>
+    <task id="LOCAL-00007" summary="new commit">
+      <option name="closed" value="true" />
+      <created>1768024948392</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1768024948392</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +144,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="new commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="new commit" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LNLN_main$train.coverage" NAME="train Coverage Results" MODIFIED="1768025144511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
