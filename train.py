@@ -1,4 +1,6 @@
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = '1'
+
 import torch
 import yaml
 import argparse
@@ -7,19 +9,19 @@ from core.losses import MultimodalLoss
 from core.scheduler import get_scheduler
 from core.utils import setup_seed, get_best_results
 from models.lnln import build_model
-from core.metric import MetricsTop 
+from core.metric import MetricsTop
 
 
-# os.environ["CUDA_VISIBLE_DEVICES"] = '1'
 USE_CUDA = torch.cuda.is_available()
 device = torch.device("cuda" if USE_CUDA else "cpu")
 print(device)
 
-parser = argparse.ArgumentParser() 
-parser.add_argument('--config_file', type=str, default='') 
-parser.add_argument('--seed', type=int, default=-1) 
+parser = argparse.ArgumentParser()
+parser.add_argument('--config_file', type=str, default='')
+parser.add_argument('--seed', type=int, default=-1)
 opt = parser.parse_args()
 print(opt)
+
 
 def main():
     best_valid_results, best_test_results = {}, {}
@@ -51,7 +53,6 @@ def main():
     loss_fn = MultimodalLoss(args)
 
     metrics = MetricsTop(train_mode = args['base']['train_mode']).getMetics(args['dataset']['datasetName'])
-
 
     for epoch in range(1, args['base']['n_epochs']+1):
         train(model, dataLoader['train'], optimizer, loss_fn, epoch, metrics)
@@ -109,15 +110,13 @@ def train(model, train_loader, optimizer, loss_fn, epoch, metrics):
     print(f'Train Results Epoch {epoch}: {results}')
 
 
-
-
 def evaluate(model, eval_loader, loss_fn, epoch, metrics):
     loss_dict = {}
 
     y_pred, y_true = [], []
 
     model.eval()
-    
+
     for cur_iter, data in enumerate(eval_loader):
         complete_input = (None, None, None)
         incomplete_input = (data['vision_m'].to(device), data['audio_m'].to(device), data['text_m'].to(device))
@@ -126,7 +125,7 @@ def evaluate(model, eval_loader, loss_fn, epoch, metrics):
         completeness_labels = 1. - data['labels']['missing_rate_l'].to(device)
         effectiveness_labels = torch.cat([torch.ones(len(sentiment_labels)*8), torch.zeros(len(sentiment_labels)*8)]).long().to(device)
         label = {'sentiment_labels': sentiment_labels, 'completeness_labels': completeness_labels, 'effectiveness_labels': effectiveness_labels}
-        
+
         with torch.no_grad():
             out = model(complete_input, incomplete_input)
 
@@ -147,10 +146,10 @@ def evaluate(model, eval_loader, loss_fn, epoch, metrics):
                     loss_dict[key] += value.item()
                 except:
                     loss_dict[key] += value
-    
+
     pred, true = torch.cat(y_pred), torch.cat(y_true)
     results = metrics(pred, true)
-    
+
     # print(f'Test Loss Epoch {epoch}: {loss_dict}')
     # print(f'Test Results Epoch {epoch}: {results}')
 
