@@ -1,7 +1,10 @@
+from __future__ import annotations
 import os
 import torch
 import numpy as np
 import random
+from argparse import Namespace
+from typing import Any, Mapping, Sequence
 
 
 def save_model(save_path, epoch, model, optimizer):
@@ -76,3 +79,35 @@ def get_best_results(results, best_results, epoch, model, optimizer, ckpt_root, 
                 pass
     
     return best_results
+
+
+def dict_to_namespace(d: Any) -> Any:
+    """
+    Recursively convert dict-like objects to argparse.Namespace.
+
+    - dict -> Namespace (and nested dicts too)
+    - list/tuple -> recursively convert elements
+    - Namespace -> return as-is
+    - other types -> return as-is
+
+    This is useful for loading YAML/JSON configs into dot-access style:
+        cfg.model.hidden_dim instead of cfg['model']['hidden_dim']
+    """
+    if isinstance(d, Namespace):
+        return d
+
+    # mapping (dict-like)
+    if isinstance(d, Mapping):
+        ns = Namespace()
+        for k, v in d.items():
+            # keys must be strings for attribute access; if not, stringify
+            key = str(k)
+            setattr(ns, key, dict_to_namespace(v))
+        return ns
+
+    # sequence but not string/bytes
+    if isinstance(d, (list, tuple)):
+        converted = [dict_to_namespace(x) for x in d]
+        return type(d)(converted)
+
+    return d
