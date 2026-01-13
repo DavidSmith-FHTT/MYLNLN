@@ -15,8 +15,10 @@ class BertTextEncoder(nn.Module):
 
         tokenizer_class = TRANSFORMERS_MAP[transformers][1]
         model_class = TRANSFORMERS_MAP[transformers][0]
-        self.tokenizer = tokenizer_class.from_pretrained('/home/ningwang/SSD1T/cts/MMSA/pretrained_berts/bert-base-chinese')
-        self.model = model_class.from_pretrained('/home/ningwang/SSD1T/cts/MMSA/pretrained_berts/bert-base-chinese')
+        self.tokenizer = tokenizer_class.from_pretrained('/home/ningwang/SSD1T/cts/MMSA/pretrained_berts/bert-base-uncased')
+        self.model = model_class.from_pretrained('/home/ningwang/SSD1T/cts/MMSA/pretrained_berts/bert-base-uncased')
+        # self.tokenizer = tokenizer_class.from_pretrained('/home/ningwang/SSD1T/cts/MMSA/pretrained_berts/bert-base-chinese')
+        # self.model = model_class.from_pretrained('/home/ningwang/SSD1T/cts/MMSA/pretrained_berts/bert-base-chinese')
         self.use_finetune = use_finetune
     
     def get_tokenizer(self):
