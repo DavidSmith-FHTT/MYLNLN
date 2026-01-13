@@ -28,8 +28,73 @@ bash train.sh
 
 ## Evaluation
 After the training is completed, the checkpoints corresponding to the three random seeds (1111,1112,1113) can be used for evaluation. For example, evaluate the the model's binary classification accuracy in MOSI:
+
+### mosi
 ```
-CUDA_VISIBLE_DEVICES=0 python robust_evaluation.py --config_file configs/eval_mosi.yaml --key_eval Has0_acc_2
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosi.yaml --key_eval Corr
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosi.yaml --key_eval Has0_acc_2
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosi.yaml --key_eval MAE
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosi.yaml --key_eval Mult_acc_5
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosi.yaml --key_eval Mult_acc_7
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosi.yaml --key_eval Non0_acc_2
+```
+
+### mosei
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosei.yaml --key_eval Corr
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosei.yaml --key_eval Has0_acc_2
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosei.yaml --key_eval MAE
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosei.yaml --key_eval Mult_acc_5
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosei.yaml --key_eval Mult_acc_7
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_mosei.yaml --key_eval Non0_acc_2
+```
+
+### sims
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_sims.yaml --key_eval Corr
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_sims.yaml --key_eval Mult_acc_2
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_sims.yaml --key_eval MAE
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_sims.yaml --key_eval Mult_acc_5
+```
+```
+CUDA_VISIBLE_DEVICES=3 python robust_evaluation.py --config_file configs/eval_sims.yaml --key_eval Mult_acc_3
+```
+
+## extract_best_result
+```
+python extract_best_per_rate.py mosi
+```
+```
+python extract_best_per_rate.py mosei
+```
+```
+python extract_best_per_rate.py sims
 ```
 
 ## Note
