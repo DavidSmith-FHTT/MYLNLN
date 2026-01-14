@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d982144b-6386-46ef-b6a6-fbd3722ce10f" name="Changes" comment="new commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/basic_layers.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/basic_layers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/lnln.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/lnln.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/robust_evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/robust_evaluation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +166,7 @@
       <workItem from="1768290642034" duration="3719000" />
       <workItem from="1768308372491" duration="1472000" />
       <workItem from="1768311033923" duration="1081000" />
-      <workItem from="1768356385019" duration="4652000" />
+      <workItem from="1768356385019" duration="9959000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -296,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768309089741</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="new commit">
+      <option name="closed" value="true" />
+      <created>1768361124228</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1768361124229</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

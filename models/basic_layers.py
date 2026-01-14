@@ -222,7 +222,7 @@ class TransformerDecoder(nn.Module):
     def forward(self, tgt, memory):
         for attn1, attn2, ff in self.layers:
             tgt = attn1(tgt, tgt, tgt) + tgt
-            tgt = attn1(tgt, memory, memory) + tgt
+            tgt = attn2(tgt, memory, memory) + tgt
             tgt = ff(tgt) + tgt
         return tgt
 
