@@ -2,6 +2,7 @@ import os
 import torch
 import yaml
 import argparse
+from pathlib import Path
 from core.dataset import MMDataEvaluationLoader
 from models.lnln import build_model
 from core.metric import MetricsTop
@@ -32,6 +33,42 @@ def main():
     model = build_model(args).to(device)
     metrics = MetricsTop(train_mode = args['base']['train_mode']).getMetics(dataset_name)
 
+    # 创建日志目录和文件
+    log_dir = Path(f'log/main_experiment/{dataset_name}')
+    log_dir.mkdir(parents=True, exist_ok=True)
+    
+    # 根据key_eval确定日志文件名（符合extract_best_per_rate.py的命名规则）
+    if dataset_name == 'sims':
+        if key_eval in ['Mult_acc_2']:
+            log_file = log_dir / 'robust_eval_Mult_acc_2.log'
+        elif key_eval == 'Mult_acc_3':
+            log_file = log_dir / 'robust_eval_Mult_acc_3.log'
+        elif key_eval == 'Mult_acc_5':
+            log_file = log_dir / 'robust_eval_Mult_acc_5.log'
+        elif key_eval == 'MAE':
+            log_file = log_dir / 'robust_eval_MAE.log'
+        else:
+            log_file = log_dir / f'robust_eval_{key_eval}.log'
+    else:  # mosi/mosei
+        if key_eval == 'Has0_acc_2':
+            log_file = log_dir / 'robust_eval_Has0_acc_2.log'
+        elif key_eval == 'Non0_acc_2':
+            log_file = log_dir / 'robust_eval_Non0_acc_2.log'
+        elif key_eval == 'Mult_acc_5':
+            log_file = log_dir / 'robust_eval_Mult_acc_5.log'
+        elif key_eval == 'Mult_acc_7':
+            log_file = log_dir / 'robust_eval_Mult_acc_7.log'
+        elif key_eval == 'MAE':
+            log_file = log_dir / 'robust_eval_MAE.log'
+        else:
+            log_file = log_dir / f'robust_eval_{key_eval}.log'
+    
+    # 打开日志文件（追加模式）
+    log_f = open(log_file, 'a', encoding='utf-8')
+    log_f.write(f"\n{'='*80}\n")
+    log_f.write(f"Evaluation started for {dataset_name.upper()} - {key_eval}\n")
+    log_f.write(f"{'='*80}\n\n")
+
     missing_rate_list = [0., 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
     for cur_r in missing_rate_list:
         test_results_list = []
@@ -45,6 +82,10 @@ def main():
         
                 test_results_cur_seed = evaluate(model, dataLoader, metrics)
                 # print(f'{cur_seed}: {test_results_cur_seed}')
+                
+                # 记录每个seed的详细结果到日志文件（符合extract_best_per_rate.py的解析格式）
+                log_f.write(f"Seed {cur_seed} (Missing Rate {cur_r}): {test_results_cur_seed}\n")
+                log_f.flush()  # 立即写入文件
                 
                 test_results_list.append(test_results_cur_seed)
 
@@ -73,6 +114,10 @@ def main():
         
                 test_results_cur_seed = evaluate(model, dataLoader, metrics)
                 
+                # 记录每个seed的详细结果到日志文件（符合extract_best_per_rate.py的解析格式）
+                log_f.write(f"Seed {cur_seed} (Missing Rate {cur_r}): {test_results_cur_seed}\n")
+                log_f.flush()  # 立即写入文件
+                
                 test_results_list.append(test_results_cur_seed)
 
             if key_eval == 'Has0_acc_2':
@@ -93,6 +138,13 @@ def main():
                 MAE_avg = (test_results_list[0]['MAE'] + test_results_list[1]['MAE'] + test_results_list[2]['MAE']) / 3
                 Corr_avg = (test_results_list[0]['Corr'] + test_results_list[1]['Corr'] + test_results_list[2]['Corr']) / 3
                 print(f'key_eval: {key_eval}, missing rate: {cur_r}, MAE_avg: {MAE_avg}, Corr_avg: {Corr_avg}')
+    
+    # 关闭日志文件
+    log_f.write(f"\n{'='*80}\n")
+    log_f.write(f"Evaluation completed for {dataset_name.upper()} - {key_eval}\n")
+    log_f.write(f"{'='*80}\n")
+    log_f.close()
+    print(f"\nLog file saved to: {log_file}")
 
 
 def evaluate(model, eval_loader, metrics):

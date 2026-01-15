@@ -123,8 +123,7 @@ class LNLN(nn.Module):
             nn.Linear(args['model']['dmml']['regression']['input_dim'], args['model']['dmml']['regression']['out_dim'])
         ])
 
-        self.cross_lv = CrossMambaBlock(query_dim=128, context_dim=128, d_model=128, bidirectional=True)
-        self.cross_la = CrossMambaBlock(query_dim=128, context_dim=128, d_model=128, bidirectional=True)
+        # ++++++++++++++++++++++++
         self.cross_f = CrossMambaBlock(query_dim=128, context_dim=128, d_model=128, bidirectional=True)
 
     def forward(self, complete_input, incomplete_input):
@@ -149,7 +148,7 @@ class LNLN(nn.Module):
         h_d_list = self.dmml[0](h_1_d)
         h_hyper = self.dmml[1](h_d_list, h_1_a, h_1_v, h_hyper)
 
-        # ----------------------
+        # ++++++++++++++++++++++++
         # feat = self.dmml[2](h_hyper, h_d_list[-1])
         feat = self.cross_f(h_hyper, h_d_list[-1])
 
