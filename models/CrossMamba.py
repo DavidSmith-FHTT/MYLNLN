@@ -132,60 +132,6 @@ class CrossMamba(nn.Module):
         return out
 
 
-class ModalityEnhancer(nn.Module):
-    """
-    单模态特征增强模块: Pre-LN + BiMamba + Residual + FFN
-    用于在proj_v/proj_a/proj_l后进一步细化单模态特征。
-    
-    输入: [B, L, D]
-    输出: [B, L, D]
-    """
-    def __init__(
-        self,
-        dim: int,
-        d_state: int = 16,
-        d_conv: int = 4,
-        expand: int = 2,
-        dropout: float = 0.1,
-        ffn_mult: int = 4,
-        bidirectional: bool = True,
-    ):
-        super().__init__()
-        self.dim = dim
-        
-        # Pre-LN for Mamba
-        self.ln1 = nn.LayerNorm(dim)
-        
-        # BiMamba for sequence modeling
-        mamba_core = Mamba(
-            d_model=dim,
-            d_state=d_state,
-            d_conv=d_conv,
-            expand=expand,
-        )
-        self.mamba = BiMamba(mamba_core) if bidirectional else mamba_core
-        self.drop1 = nn.Dropout(dropout)
-        
-        # Pre-LN for FFN
-        self.ln2 = nn.LayerNorm(dim)
-        hidden = dim * ffn_mult
-        self.ffn = nn.Sequential(
-            nn.Linear(dim, hidden),
-            nn.GELU(),
-            nn.Dropout(dropout),
-            nn.Linear(hidden, dim),
-            nn.Dropout(dropout),
-        )
-    
-    def forward(self, x: torch.Tensor) -> torch.Tensor:
-        # x: [B, L, D]
-        # Mamba with residual
-        x = x + self.drop1(self.mamba(self.ln1(x)))
-        # FFN with residual
-        x = x + self.ffn(self.ln2(x))
-        return x
-
-
 class CrossMambaBlock(nn.Module):
     """
     Pre-LN + CrossMamba + Residual + FFN 的标准 block（即插即用）
