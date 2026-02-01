@@ -139,12 +139,8 @@ class CrossMamba(nn.Module):
         # 序列建模：Mamba / BiMamba
         y = self.mamba(x)             # [B, Lc+Lq, d_model]
 
-        # 取 query 段（丢弃 context 段输出）
-        yq = y[:, Lc:, :]             # [B, Lq, d_model]
-
-        # 输出（维持原逻辑：out 即 query 段输出）
-        out = yq                      # [B, Lq, query_dim]
-        return out
+        # 取 query 段（丢弃 context 段输出） 返回 。[B, Lq, query_dim]
+        return y[:, Lc:, :]
 
 
 class CrossMambaBlock(nn.Module):
