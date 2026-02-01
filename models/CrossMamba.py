@@ -49,7 +49,8 @@ class BiMamba(nn.Module):
         y_fwd = self.mamba(x)
 
         # 反向分支：翻转序列 -> 过 mamba -> 再翻转回来对齐原顺序
-        y_bwd = _reverse_seq(self.mamba(_reverse_seq(x)))
+        # y_bwd = _reverse_seq(self.mamba(_reverse_seq(x)))
+        y_bwd = self.mamba(_reverse_seq(x))
 
         # 双向输出平均融合（保持尺度稳定）
         return 0.5 * (y_fwd + y_bwd)
