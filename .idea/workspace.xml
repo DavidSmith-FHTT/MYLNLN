@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d982144b-6386-46ef-b6a6-fbd3722ce10f" name="Changes" comment="new commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/CrossMamba.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/CrossMamba.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +125,7 @@
       <workItem from="1769615269497" duration="601000" />
       <workItem from="1769667287241" duration="26000" />
       <workItem from="1769676787760" duration="8000" />
-      <workItem from="1769926501436" duration="5724000" />
+      <workItem from="1769926501436" duration="7587000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -328,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769930838360</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="new commit">
+      <option name="closed" value="true" />
+      <created>1769933063543</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1769933063543</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +360,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LNLN_main$MGA.coverage" NAME="MGA Coverage Results" MODIFIED="1768655311390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/LNLN_main$MambaSSMBlock.coverage" NAME="MambaSSMBlock Coverage Results" MODIFIED="1768554042821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
-    <SUITE FILE_PATH="coverage/LNLN_main$train.coverage" NAME="train Coverage Results" MODIFIED="1769929424796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LNLN_main$train.coverage" NAME="train Coverage Results" MODIFIED="1769934532629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LNLN_main$TriModalMamba.coverage" NAME="TriModalMamba Coverage Results" MODIFIED="1768553777366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/LNLN_main$CrossMamba.coverage" NAME="CrossMamba Coverage Results" MODIFIED="1768553328818" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/LNLN_main$MambaBlock.coverage" NAME="MambaBlock Coverage Results" MODIFIED="1768553317591" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
