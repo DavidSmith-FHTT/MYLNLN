@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+from mamba_ssm import Mamba
 
 
 def _reverse_seq(x: torch.Tensor) -> torch.Tensor:
@@ -39,7 +40,7 @@ class CrossMamba(nn.Module):
         self,
         query_dim: int,
         context_dim: int,
-        d_model: int = None,
+        d_model: int,
         # mamba hyperparams
         d_state: int = 16,
         d_conv: int = 4,
@@ -48,43 +49,21 @@ class CrossMamba(nn.Module):
         bidirectional: bool = True,
     ):
         super().__init__()
-        d_model = d_model if d_model is not None else query_dim
 
         self.query_dim = query_dim
         self.context_dim = context_dim
         self.d_model = d_model
         self.bidirectional = bidirectional
 
-        # 1) 输入投影到 d_model
-        self.q_in = nn.Identity() if query_dim == d_model else nn.Linear(query_dim, d_model, bias=False)
-        self.c_in = nn.Identity() if context_dim == d_model else nn.Linear(context_dim, d_model, bias=False)
-
-        # 2) segment embedding（区分 context / query）
+        # 1) segment embedding（区分 context / query） 可学习参数
         self.seg_context = nn.Parameter(torch.zeros(1, 1, d_model))
         self.seg_query = nn.Parameter(torch.zeros(1, 1, d_model))
         nn.init.normal_(self.seg_context, std=0.02)
         nn.init.normal_(self.seg_query, std=0.02)
 
-        # 3) Mamba 主体（要求安装 mamba-ssm）
-        try:
-            from mamba_ssm import Mamba
-        except Exception as e:
-            raise ImportError(
-                "无法导入 mamba_ssm.Mamba。请先安装：pip install mamba-ssm\n"
-                f"原始错误：{repr(e)}"
-            )
-
-        mamba_core = Mamba(
-            d_model=d_model,
-            d_state=d_state,
-            d_conv=d_conv,
-            expand=expand,
-        )
-
+        # 2) Mamba 主体
+        mamba_core = Mamba(d_model=d_model, d_state=d_state, d_conv=d_conv, expand=expand)
         self.mamba = BiMamba(mamba_core) if bidirectional else mamba_core
-
-        # 4) 输出投影到 query_dim
-        self.out_proj = nn.Identity() if d_model == query_dim else nn.Linear(d_model, query_dim, bias=False)
 
     def forward(
         self,
@@ -95,8 +74,8 @@ class CrossMamba(nn.Module):
         B2, Lc, _ = context.shape
         assert B == B2, "batch size mismatch"
 
-        q = self.q_in(query)       # [B, Lq, d_model]
-        c = self.c_in(context)     # [B, Lc, d_model]
+        q = query       # [B, Lq, d_model]
+        c = context     # [B, Lc, d_model]
 
         # 添加 segment embedding
         c = c + self.seg_context
@@ -108,7 +87,7 @@ class CrossMamba(nn.Module):
 
         # 取 query 段
         yq = y[:, Lc:, :]             # [B, Lq, d_model]
-        out = self.out_proj(yq)       # [B, Lq, query_dim]
+        out = yq                      # [B, Lq, query_dim]
         return out
 
 
@@ -121,7 +100,7 @@ class CrossMambaBlock(nn.Module):
         self,
         query_dim: int,
         context_dim: int,
-        d_model: int = None,
+        d_model: int,
         # mamba hyperparams
         d_state: int = 16,
         d_conv: int = 4,
@@ -135,7 +114,7 @@ class CrossMambaBlock(nn.Module):
         self.cross = CrossMamba(
             query_dim=query_dim,
             context_dim=context_dim,
-            d_model=d_model if d_model is not None else query_dim,
+            d_model=d_model,
             d_state=d_state,
             d_conv=d_conv,
             expand=expand,
