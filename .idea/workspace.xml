@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d982144b-6386-46ef-b6a6-fbd3722ce10f" name="Changes" comment="new commit">
+      <change afterPath="$PROJECT_DIR$/visualization/data_distribution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/CrossMamba.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/CrossMamba.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,7 @@
     "Python.MambaSSMBlock.executor": "Run",
     "Python.MultiModalFeatureAligner.executor": "Run",
     "Python.TriModalMamba.executor": "Run",
+    "Python.data_distribution.executor": "Run",
     "Python.train.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
@@ -47,7 +48,7 @@
     "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
     "WebServerToolWindowPanel.toolwindow.show.size": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Experiment/model_reproduction/LNLN-main/models",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,7 +63,30 @@
       <recent name="D:\Experiment\model_reproduction\LNLN-main\models" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.data_distribution">
+    <configuration name="data_distribution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LNLN-main" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/visualization" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/visualization/data_distribution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LNLN-main" />
       <option name="ENV_FILES" value="" />
@@ -88,6 +112,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.data_distribution" />
         <item itemvalue="Python.train" />
       </list>
     </recent_temporary>
@@ -126,7 +151,9 @@
       <workItem from="1769615269497" duration="601000" />
       <workItem from="1769667287241" duration="26000" />
       <workItem from="1769676787760" duration="8000" />
-      <workItem from="1769926501436" duration="20195000" />
+      <workItem from="1769926501436" duration="20230000" />
+      <workItem from="1769956993553" duration="87000" />
+      <workItem from="1770013472692" duration="1252000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -352,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769940679176</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="new commit">
+      <option name="closed" value="true" />
+      <created>1769956468186</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1769956468186</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,6 +411,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LNLN_main$MGA.coverage" NAME="MGA Coverage Results" MODIFIED="1768655311390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/LNLN_main$data_distribution.coverage" NAME="data_distribution Coverage Results" MODIFIED="1770014636623" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/visualization" />
     <SUITE FILE_PATH="coverage/LNLN_main$MambaSSMBlock.coverage" NAME="MambaSSMBlock Coverage Results" MODIFIED="1768554042821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/LNLN_main$train.coverage" NAME="train Coverage Results" MODIFIED="1769934532629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LNLN_main$TriModalMamba.coverage" NAME="TriModalMamba Coverage Results" MODIFIED="1768553777366" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
